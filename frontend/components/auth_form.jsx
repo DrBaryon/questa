@@ -37,18 +37,23 @@ class AuthForm extends React.Component{
   render(){
     return (
       <div className = "auth-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <label>Username
-            <input onChange={this.update("username")}>
-              {this.props.username}
-            </input>
-          </label>
-          <label>Password
-            <input onChange={this.update("password")}>
-              {this.props.password}
-            </input>
-          </label>
-        </form>
+        <div className = "auth-form-big-box">
+          Welcome to Questa!
+          <br />
+          Share your knowledge with us!
+          <form onSubmit={this.handleSubmit} className="auth-form-box">
+            <label>Username
+              <input onChange={this.update("username")}>
+                {this.props.username}
+              </input>
+            </label>
+            <label>Password
+              <input onChange={this.update("password")}>
+                {this.props.password}
+              </input>
+            </label>
+          </form>
+        </ div>
       </div>
     );
   }
