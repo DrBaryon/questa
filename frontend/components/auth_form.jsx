@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 
-export default class AuthForm extends React.Component{
+class AuthForm extends React.Component{
 
   constructor(props){
     super(props);
@@ -18,19 +18,32 @@ export default class AuthForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createUser(this.state);
+    const user = this.state;
+    this.props.processForm({user});
   }
+
+  renderErrors() {
+		return(
+			<ul>
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>
+						{error}
+					</li>
+				))}
+			</ul>
+		);
+	}
 
   render(){
     return (
       <div className = "auth-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <label>
+          <label>Username
             <input onChange={this.update("username")}>
               {this.props.username}
             </input>
           </label>
-          <label>
+          <label>Password
             <input onChange={this.update("password")}>
               {this.props.password}
             </input>
@@ -40,3 +53,5 @@ export default class AuthForm extends React.Component{
     );
   }
 }
+
+export default withRouter(AuthForm);
