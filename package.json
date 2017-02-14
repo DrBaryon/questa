@@ -8,12 +8,17 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DrBaryon/fullstackproject.git"
   },
+  "engines": {
+  "node": "6.7.0",
+  "npm": "3.10.7"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

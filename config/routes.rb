@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  namespace :api, defaults: {format: :json} do
+    resource :user
+    resource :session
+  end
+
+  root "static_pages#root"
 end
