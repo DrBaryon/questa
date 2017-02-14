@@ -1,9 +1,23 @@
+var webpack = require("webpack");
+
 module.exports = {
   entry: './frontend/questa.jsx',
   output: {
     path: "./app/assets/javascripts",
     filename: 'bundle.js',
   },
+  plugins:[
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: true
+      }
+    })
+  ],
   module: {
     loaders: [
       {
