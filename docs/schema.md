@@ -14,6 +14,7 @@ questions
 |---------------|---------|-------------------------|
 |id             |integer  |not null, primary key    |
 |title          |string   |not null, indexed, unique|
+|description    |text     |not null, unique         |
 |author_id      |integer  |not null, foreign key    |
 
 answers
@@ -31,7 +32,7 @@ comments
 |author_id      |integer  |not null, foreign key    |
 |content        |string   |not null                 |
 
-taggings
+tags
 |---------------|---------|-------------------------|
 |id             |integer  |not null, primary key    |
 |question_id    |integer  |not null, foreign key    |
@@ -40,4 +41,4 @@ taggings
 topics
 |---------------|---------|-------------------------|
 |id             |integer  |not null, primary key    |
-|topic_name     |string   |not null                 |
+|name           |string   |not null                 |
