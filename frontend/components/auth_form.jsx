@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 
 
-class AuthForm {
+export default class AuthForm extends React.Component{
 
   constructor(props){
     super(props);
