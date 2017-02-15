@@ -81,8 +81,8 @@ export default class SignupForm extends React.Component{
             </label>
           </li>
           <li>
-            <a onClick={this.toggleHidden}>{"Signup with email"}</a>
             <input type="submit" value="Sign Up"/>
+            <a onClick={this.toggleHidden}>{"Signup with email"}</a>
           </li>
         </ul>
       </form>
