@@ -47,16 +47,22 @@ export default class LoginForm extends React.Component{
     return (
       <form onSubmit={this.handleNewSession} >
         <h2>Login</h2>
-        <label>Email
-          <input onChange={this.update("email")}
-            value={this.state.email}/>
-        </label>
-        <label>Password
-          <input onChange={this.update("password")}
-            value={this.state.password}/>
-        </label>
-        <br/>
-        <input type="submit" value="Log In"/>
+        <ul>
+          <li>
+            <label>Email
+              <input onChange={this.update("email")}
+                value={this.state.email}/>
+            </label></li>
+          <li>
+            <label>Password
+              <input onChange={this.update("password")}
+                value={this.state.password}/>
+            </label>
+          </li>
+          <li>
+            <input type="submit" value="Log In"/>
+          </li>
+        </ul>
       </form>
     );
   }

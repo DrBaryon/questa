@@ -13,7 +13,6 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: normal;
-  height: 403px;
   line-height: 18.2px;
   padding-bottom: 32px;
   padding-left: 32px;
@@ -26,6 +25,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  overflow: auto;
 }
 
 .signup-form {
@@ -37,12 +37,11 @@
   float: left;
   font-size: 13px;
   font-weight: normal;
-  height: 403px;
   line-height: 18.2px;
   text-size-adjust: 100%;
   width: 292px;
   word-wrap: break-word;
-  border-right: .5px solid grey;
+  overflow: auto;
 }
 
 
@@ -56,7 +55,7 @@
   float: left;
   font-size: 13px;
   font-weight: normal;
-  height: 403px;
+  height: 150px;
   line-height: 18.2px;
   text-size-adjust: 100%;
   width: 292px;
@@ -86,11 +85,23 @@ h3 {
   color: grey;
 }
 
+a {
+  color: rgb(43, 109, 173);
+  cursor: pointer;
+}
 
+a:hover {
+  text-decoration: underline;
+}
 
 li {
   display: flex;
   width: 100%;
+}
+
+li:last-child{
+  margin-top: 10px;
+  flex-direction: row-reverse;
 }
 
 label, input {
@@ -146,4 +157,5 @@ input[type="submit"]{
   padding-top: 3px;
   text-align: center;
   width: 70px;
+  margin-left: 10px;
 }
