@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+    height: 100%;
+    font-weight: 400;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+body {
+    height: 100%;
+    word-wrap: break-word;
+    color: #333;
+    font-size: 13px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+@import "components/*";
