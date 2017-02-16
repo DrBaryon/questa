@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import AuthFormContainer from './auth_form_container';
 
 const App = ({children}) => {
-
   return (
     <div>
       <header>

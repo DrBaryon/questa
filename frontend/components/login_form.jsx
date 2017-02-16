@@ -8,7 +8,7 @@ export default class LoginForm extends React.Component{
     this.state = {
       password: "", email: ""
     };
-    this.handleNewSession.bind(this);
+    this.handleNewSession = this.handleNewSession.bind(this);
   }
 
 

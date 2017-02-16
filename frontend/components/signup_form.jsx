@@ -6,7 +6,7 @@ export default class SignupForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      firstName: "", lastName: "", password: "", email: "", hidden: true
+      first_name: "", last_name: "", password: "", email: "", hidden: true
     };
     this.handleNewUser = this.handleNewUser.bind(this);
     this.toggleHidden = this.toggleHidden.bind(this);
@@ -55,16 +55,16 @@ export default class SignupForm extends React.Component{
       );
     }
     return (
-      <form onSubmit={this.props.submit}>
+      <form onSubmit={this.handleNewUser}>
         <h2>Signup</h2>
         <ul>
           <li>
             <label>First Name
-            <input onChange={this.update("firstName")}
+            <input onChange={this.update("first_name")}
               value={this.state.firstName}/>
             </label>
             <label>Last Name
-              <input onChange={this.update("lastName")}
+              <input onChange={this.update("last_name")}
                 value={this.state.lastName}/>
             </label>
           </li>
