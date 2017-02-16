@@ -1,5 +1,11 @@
 class Api::QuestionsController < ApplicationController
 
+  def index
+  end
+
+  def show
+  end
+
 
 
   def create
@@ -10,10 +16,9 @@ class Api::QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
     @question.update_attributes(question_params)
+    render :show
   end
 
-  def delete
-  end
 
   private
 

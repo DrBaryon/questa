@@ -7,8 +7,9 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
+      debugger
 			login(@user)
-			render "api/users/show"
+			render "api/questions/index"
 		else
 			render(
         json: ["Invalid username/password combination"],
@@ -21,7 +22,7 @@ class Api::SessionsController < ApplicationController
 		@user = current_user
 		if @user
 			logout
-			render "api/users/show"
+			render "static_pages/root"
 		else
 			render(
         json: ["Nobody signed in"],
