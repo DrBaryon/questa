@@ -13,6 +13,7 @@ export const fetchAllQuestions = () => {
 };
 
 export const createQuestion = (question) => {
+  debugger
   return $.ajax({
     type: 'POST',
     url: `/api/questions/`,
