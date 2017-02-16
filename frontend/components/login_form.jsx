@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 
-export default class LoginForm extends React.Component{
+class LoginForm extends React.Component{
 
   constructor({props}){
     super(props);
@@ -9,6 +9,7 @@ export default class LoginForm extends React.Component{
       password: "", email: ""
     };
     this.handleNewSession = this.handleNewSession.bind(this);
+    this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
   }
 
 
@@ -20,9 +21,7 @@ export default class LoginForm extends React.Component{
 	}
 
   redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
-		}
+		this.props.router.push("/");
 	}
 
   renderErrors() {
@@ -40,7 +39,7 @@ export default class LoginForm extends React.Component{
   handleNewSession(e){
     e.preventDefault();
     const user = this.state;
-    this.props.login({user});
+    this.props.login({user}).then(this.redirectIfLoggedIn);
   }
 
   render (){
@@ -67,3 +66,5 @@ export default class LoginForm extends React.Component{
     );
   }
 }
+
+export default withRouter(LoginForm);

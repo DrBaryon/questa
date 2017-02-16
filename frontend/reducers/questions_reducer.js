@@ -13,5 +13,9 @@ const QuestionReducer = (state = {}, action) => {
       const stateAfterRemove = merge({}, state);
       delete stateAfterRemove[action.question.id];
       return stateAfterRemove;
+    default:
+      return state;
   }
 };
+
+export default QuestionReducer;

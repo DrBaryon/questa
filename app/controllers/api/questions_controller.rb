@@ -1,6 +1,7 @@
 class Api::QuestionsController < ApplicationController
 
   def index
+    render :index
   end
 
   def show
@@ -9,6 +10,7 @@ class Api::QuestionsController < ApplicationController
 
 
   def create
+    debugger
     @question = Question.create!(question_params, author_id: current_user.id)
     render :show
   end
