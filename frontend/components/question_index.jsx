@@ -8,16 +8,39 @@ class QuestionIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchAllQuestions();
+  }
+
   render(){
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));
     return (
-      <div>
-        <QueryBar createQuestion={createQuestion}/>
-        <ul className="question-feed">
-          {questionIndexItems}
-        </ul>
+      <div className="homepage">
+        <div className="header">
+          <QueryBar createQuestion={this.props.createQuestion}/>
+        </div>
+        <div className="main">
+          <div className="left-sidebar-container">
+            <div className="left-sidebar">
+              <h1>Left</h1>
+            </div>
+          </div>
+          <div className="main-content">
+            <div className="main-content-header">
+              <h1>Main Content</h1>
+            </div>
+            <ul className="question-feed">
+              {questionIndexItems}
+            </ul>
+          </div>
+          <div className="right-sidebar-container">
+            <div className="right-sidebar">
+              <h1>Right</h1>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
