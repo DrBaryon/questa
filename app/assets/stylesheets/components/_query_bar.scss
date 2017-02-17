@@ -1,4 +1,4 @@
-.query_bar {
+.expanded_query_bar {
   backface-visibility: hidden;
   background-attachment: scroll;
   background-clip: border-box;
@@ -35,18 +35,18 @@
   z-index: 800;
 }
 
-.query_bar > form {
+.expanded_query_bar > form {
   display: flex;
   width: 1000px;
 }
-.ask_bar{
+.expanded_ask_bar{
   box-sizing: border-box;
   width: 64%;
   padding: 10px 0 11px 14px;
   display: block;
 }
 
-.ask_bar > input{
+.expanded_ask_bar > input{
   box-sizing: border-box;
   width: 100%;
   padding: 3px 8px 3px 8px;
@@ -108,14 +108,14 @@ word-break: break-word;
 word-wrap: break-word;
 }
 
-.tool_bar{
+.expanded_tool_bar{
   width: 36%;
   display: flex;
   padding: 11px;
   height: 27px;
 }
 
-.tool_bar > input {
+.expanded_tool_bar > input {
   box-sizing: border-box;
   transition: opacity ease-in-out 100ms,color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
   border-radius: 3px;
@@ -133,7 +133,7 @@ word-wrap: break-word;
   box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
 }
 
-.tool_bar > button {
+.expanded_tool_bar > button {
   width: 27px;
 }
 

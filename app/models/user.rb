@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :questions
+  has_many :questions, foreign_key: :author_id
 
   def password= password
 		self.password_digest = BCrypt::Password.create(password)

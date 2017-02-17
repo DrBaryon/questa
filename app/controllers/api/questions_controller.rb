@@ -1,7 +1,8 @@
 class Api::QuestionsController < ApplicationController
 
   def index
-    render :index
+    sleep 1
+    @questions = Question.all
   end
 
   def show
@@ -10,8 +11,9 @@ class Api::QuestionsController < ApplicationController
 
 
   def create
-    @question = Question.create!(question_params, author_id: current_user.id)
-    render :show
+    debugger
+    @question = current_user.questions.create!(question_params)
+    render :index
   end
 
   def update

@@ -8,16 +8,15 @@ export const fetchQuestion = (id) => {
 export const fetchAllQuestions = () => {
   return $.ajax({
     type: 'GET',
-    url: `/api/questions/`
+    url: `/api/questions`
   });
 };
 
 export const createQuestion = (question) => {
-  debugger
   return $.ajax({
     type: 'POST',
-    url: `/api/questions/`,
-    data: question
+    url: `/api/questions`,
+    data: {question}
   });
 };
 

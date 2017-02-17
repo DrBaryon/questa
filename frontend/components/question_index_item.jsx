@@ -1,20 +1,20 @@
 import React from 'react';
 
 class QuestionIndexItem extends React.Component {
-  constructor(){
+  constructor(props){
     super(props);
   }
 
   render(){
-    const tag = Object.keys(this.props.question.topics)[0];
+    // const tag = Object.keys(this.props.question.topics)[0];
     return(
-      <div>
-        <h4>this.props.question.title</h4>
-        <h5>{tag}</h5>
-        <p>{this.props.question.description}</p>
-      </div>
+      <li className="question">
+        <h2>{this.props.question.title}</h2>
+      </li>
     );
   }
 }
+
+// <h5>{tag}</h5>
 
 export default QuestionIndexItem;
