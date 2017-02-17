@@ -1,0 +1,61 @@
+.homepage {
+  display: block;
+}
+
+.header {
+  height: 50px;
+}
+
+.main {
+  // display: flex;
+  // justify-content: center;
+  width: 1000px;
+  margin: 0px auto;
+  // background-color: red;
+  position: relative;
+}
+
+.left-sidebar-container {
+  position: absolute;
+  left: 0;
+}
+
+.left-sidebar {
+  position: fixed;
+  top: 40px;
+  background-color: blue;
+  width: 190px;
+  // height: 500px;
+}
+
+.main-content {
+  // height: 2000px;
+  margin-left: 190px;
+  margin-right: 230px;
+  background-color: orange;
+
+}
+.right-sidebar-container {
+  position: absolute;
+  right: 230px;
+}
+
+.right-sidebar {
+  position: fixed;
+  top: 40px;
+  background-color: purple;
+  width: 230px;
+  // height: 500px;
+}
+
+.question_feed {
+  display: block;
+}
+
+.question {
+  background-color: green;
+  height: 100px;
+  width: 100%;
+  padding: 16px 12px;
+  margin: -16px;
+}

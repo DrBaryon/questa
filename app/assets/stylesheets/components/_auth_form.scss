@@ -63,58 +63,58 @@
   border-left: .5px solid grey;
 }
 
-form {
+.auth-form-big-box form {
   width: 100%;
 }
 
-ul {
+.auth-form-big-box ul {
   -webkit-padding-start: 0px;
 }
 
-h1 {
+.auth-form-big-box h1 {
   font-size: 50px;
   text-align: center;
   font-family: 'Sonsie One';
   color: red;
 }
 
-h3 {
+.auth-form-big-box h3 {
   font-size: 25px;
   text-align: center;
   font-family: 'Sonsie One';
   color: grey;
 }
 
-a {
+.auth-form-big-box a {
   color: rgb(43, 109, 173);
   cursor: pointer;
 }
 
-a:hover {
+.auth-form-big-box a:hover {
   text-decoration: underline;
 }
 
-li {
+.auth-form-big-box li {
   display: flex;
   width: 100%;
 }
 
-li:last-child{
+.auth-form-big-box li:last-child{
   margin-top: 10px;
   flex-direction: row-reverse;
 }
 
-label, input {
+.auth-form-big-box label, input {
   display: block;
   width: 100%;
   margin-right: 10px;
 }
 
-input {
+.auth-form-big-box input {
   background-color: rgb(246, 246, 246);
 }
 
-input[type="submit"]{
+.auth-form-big-box input[type="submit"]{
   align-items: flex-start;
   background-attachment: scroll;
   background-clip: border-box;
