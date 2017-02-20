@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, signup } from '../actions/session_actions';
+import { login, logout, signup } from '../../actions/session_actions';
 import AuthForm from './auth_form';
 
 

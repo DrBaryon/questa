@@ -6,6 +6,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
+    sleep 1
+    @question = Question.find(params[:id])
   end
 
 
