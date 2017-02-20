@@ -14,7 +14,7 @@ class QuestionIndex extends React.Component {
 
   render(){
     const questionIndexItems = this.props.questions.map(question => (
-      <QuestionIndexItem key={question.id} question={question} fetchQuestion={this.props.fetchQuestion}/>
+      <QuestionIndexItem key={question.id} question={question} />
     ));
     // const followedTopics = this.props.currentUser.followedTopics.map(topic => (
     //   <li>{topic.name}</li>

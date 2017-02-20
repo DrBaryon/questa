@@ -15,10 +15,10 @@ class QuestionIndexItem extends React.Component {
   render(){
     // const tag = Object.keys(this.props.question.topics)[0];
     return(
-      <li className="question" onClick={this.handleClick}>
-        <a href={`#/${this.props.question.id}`} >
+      <li className="question" >
+        <Link to={`${this.props.question.id}`}>
           <h2>{this.props.question.title}</h2>
-        </a>
+        </Link>
       </li>
     );
   }
