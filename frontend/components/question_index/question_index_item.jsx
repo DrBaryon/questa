@@ -8,7 +8,6 @@ class QuestionIndexItem extends React.Component {
   }
 
   showQuestion(id){
-    debugger
     this.props.router.push(`/questions/${question.id}`);
   }
 

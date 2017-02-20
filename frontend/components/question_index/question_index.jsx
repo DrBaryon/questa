@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import QuestionIndexItem from './question_index_item';
-import QueryBar from './query_bar';
+import QueryBar from '../query_bar';
 
 class QuestionIndex extends React.Component {
   constructor(props){
@@ -16,6 +16,9 @@ class QuestionIndex extends React.Component {
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));
+    const followedTopics = this.props.currentUser.followedTopics.map(topic => (
+      <li>{topic.name}</li>
+    ));
     return (
       <div className="homepage">
         <div className="header">
@@ -25,6 +28,11 @@ class QuestionIndex extends React.Component {
           <div className="left-sidebar-container">
             <div className="left-sidebar">
               <h1>Left</h1>
+              <div className="followed-topics">
+                <ul>
+                  {followedTopics}
+                </ul>
+              </div>
             </div>
           </div>
           <div className="main-content">
