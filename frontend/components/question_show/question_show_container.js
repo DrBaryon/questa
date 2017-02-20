@@ -3,9 +3,8 @@ import { fetchQuestion, fetchAllQuestions, createQuestion } from '../../actions/
 import QuestionShow from './question_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
-    question: {}
+    question: state.question
   });
 };
 

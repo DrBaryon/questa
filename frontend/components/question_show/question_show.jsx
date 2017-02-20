@@ -9,11 +9,30 @@ class QuestionShow extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    debugger
+    this.props.fetchQuestion(this.props.params.id);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.id !== nextProps.params.id) {
+      this.props.fetchQuestion(nextProps.params.id);
+    }
+  }
+
+  routeIsCorrect() {
+    return parseInt(this.props.params.id) === this.props.question.id;
+  }
+
   render(){
+    debugger
+    if (!!this.props.question){
+      return (<h2>Loading</h2>);
+    }
     const question = this.props.question;
-    const answers = question.answers.map(answer => (
-      <Answer key={question.id} answer={answer} />
-    ));
+    // const answers = question.answers.map(answer => (
+    //   <Answer key={question.id} answer={answer} />
+    // ));
     return (
       <div className="question-page">
         <div className="header">
@@ -22,9 +41,9 @@ class QuestionShow extends React.Component {
         <div className="main">
           <div className="main-content">
             <div className="question-info-header">
-              <h1>question.title</h1>
-              <h2>question.description</h2>
-              {answers}
+              <h1>{question.title}</h1>
+              <h2>{question.description}</h2>
+
             </div>
           </div>
           <div className="right-sidebar-container">
