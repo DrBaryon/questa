@@ -14,11 +14,11 @@ class QuestionIndex extends React.Component {
 
   render(){
     const questionIndexItems = this.props.questions.map(question => (
-      <QuestionIndexItem key={question.id} question={question} />
+      <QuestionIndexItem key={question.id} question={question} fetchQuestion={this.props.fetchQuestion}/>
     ));
-    const followedTopics = this.props.currentUser.followedTopics.map(topic => (
-      <li>{topic.name}</li>
-    ));
+    // const followedTopics = this.props.currentUser.followedTopics.map(topic => (
+    //   <li>{topic.name}</li>
+    // ));
     return (
       <div className="homepage">
         <div className="header">
@@ -30,14 +30,14 @@ class QuestionIndex extends React.Component {
               <h1>Left</h1>
               <div className="followed-topics">
                 <ul>
-                  {followedTopics}
+                  {"followedTopics"}
                 </ul>
               </div>
             </div>
           </div>
           <div className="main-content">
             <div className="main-content-header">
-              <h1>Main Content</h1>
+              <h2>Main Content</h2>
             </div>
             <ul className="question-feed">
               {questionIndexItems}
@@ -54,4 +54,4 @@ class QuestionIndex extends React.Component {
   }
 }
 
-export default QuestionIndex;
+export default withRouter(QuestionIndex);

@@ -16,6 +16,12 @@ class QueryBar extends React.Component {
     this.props.createQuestion(question);
   }
 
+  clear(field) {
+		return e => this.setState({
+      [field]: ""
+    });
+	}
+
   update(field) {
 		return e => this.setState({
       [field]: e.currentTarget.value
@@ -39,6 +45,7 @@ class QueryBar extends React.Component {
     if (this.state.showDescription){
       descriptionField = <textarea
         className="description_field" type="text"
+        onClick={this.clear("description")}
         onChange={this.update("description")}
         value={"Enter details here (optional)"}/>;
     }

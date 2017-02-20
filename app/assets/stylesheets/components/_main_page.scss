@@ -8,25 +8,27 @@
 
 .main {
   padding: 30 32 30 0;
-  background-color: red;
+  background-color: white;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  width: 1000px;
+  display: block;
 }
 
 .left-sidebar-container {
   position: absolute;
   left: 0px;
+  width: 142px;
+  margin-left: 30px;
 }
 
 .left-sidebar {
   position: fixed;
-  top: 53px;
-  background-color: blue;
+  top: 83px;
+  background-color: white;
   min-height: 1px;
   font-size: 13px;
   height: 500px;
-  width: 172px;
+  width: 142px;
 }
 
 .main-content {
@@ -35,30 +37,33 @@
   margin-right: 258px;
   width: 572px;
   min-height: 1px;
-  background-color: yellow;
+  background-color: white;
   position: relative;
   display: flex;
   flex-flow: column;
+  top: 83px;
 
 }
 
 .main-content-header{
   height: 112px;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .right-sidebar-container {
   position: absolute;
-  right: 250px;
+  right: 228px;
 }
 
 .right-sidebar {
   position: fixed;
-  top: 53px;
-  background-color: purple;
-  width: 250px;
+  top: 83px;
+  background-color: white;
+  width: 228px;
   height: 500px;
   min-height: 1px;
   font-size: 13px;
+  border: 1px solid #e2e2e2;
 }
 
 .question_feed {
