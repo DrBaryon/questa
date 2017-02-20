@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: Quora_development
+  database: Questa_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Quora_test
+  database: Questa_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: Quora_production
-  username: Quora
-  password: <%= ENV['QUORA_DATABASE_PASSWORD'] %>
+  database: Questa_production
+  username: Questa
+  password: <%= ENV['QUESTA_DATABASE_PASSWORD'] %>
