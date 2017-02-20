@@ -13,7 +13,6 @@ class Api::QuestionsController < ApplicationController
 
 
   def create
-    debugger
     @question = current_user.questions.create!(question_params)
     render :index
   end

@@ -1,26 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class QuestionIndexItem extends React.Component {
   constructor(props){
     super(props);
-    this.showQuestion = this.showQuestion.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  showQuestion(id){
-    this.props.router.push(`/questions/${question.id}`);
+  handleClick(e){
+    e.preventDefault();
+    this.props.fetchQuestion(this.props.question.id);
   }
 
   render(){
     // const tag = Object.keys(this.props.question.topics)[0];
     return(
-      <li className="question" onclick={this.showQuestion(this.props.question)}>
-        <h2>{this.props.question.title}</h2>
+      <li className="question" onClick={this.handleClick}>
+        <a href={`#/${this.props.question.id}`} >
+          <h2>{this.props.question.title}</h2>
+        </a>
       </li>
     );
   }
 }
 
+// <a href={`#/${this.props.question.id}`} question>
+
 // <h5>{tag}</h5>
 
-export default QuestionIndexItem;
+export default withRouter(QuestionIndexItem);

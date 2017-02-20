@@ -1,3 +1,5 @@
+import React from 'react';
+
 class Answer extends React.Component {
   constructor(props){
     super(props);
@@ -19,3 +21,5 @@ class Answer extends React.Component {
     );
   }
 }
+
+export default Answer;
