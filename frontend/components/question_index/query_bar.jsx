@@ -1,13 +1,27 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router';
 
 class QueryBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {title: "", description: "", showDescription: false,
-      expandSearchField: true};
+      expanded: false};
     this.askQuestion = this.askQuestion.bind(this);
-    this.expandSearchField = this.expandSearchField.bind(this);
+    this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
+  }
+
+  // handleSubmit(e){
+  //   e.preventDefault();
+  //   if (e.currentTarget.className === )
+  // }
+
+  componentDidMount(){
+    this.setState({
+      expanded: false
+    });
   }
 
   askQuestion(e){
@@ -28,9 +42,9 @@ class QueryBar extends React.Component {
     });
 	}
 
-  expandSearchField(){
+  toggleExpand(){
     this.setState({
-      expandSearchField: !this.state.expandSearchField
+      expanded: !this.state.expanded
     });
   }
 
@@ -40,46 +54,49 @@ class QueryBar extends React.Component {
     });
   }
 
+  handleLogout(e){
+    e.preventDefault();
+    this.props.logout().then(this.redirectIfLoggedOut);
+  }
+
+  redirectIfLoggedOut() {
+		this.props.router.push("/login");
+	}
+
   render(){
     let descriptionField = "";
     if (this.state.showDescription){
       descriptionField = <textarea
-        className="description_field" type="text"
-        onClick={this.clear("description")}
-        onChange={this.update("description")}
-        value={"Enter details here (optional)"}/>;
+        className="description-field" type="text"
+        onChange={this.update("description")}/>;
     }
-    if (this.state.expandSearchField){
+    if (this.state.expanded){
       return(
-        <div className = "expanded_query_bar">
-          <h2>Questa</h2>
-          <form onSubmit={this.askQuestion}>
-            <div className="expanded_ask_bar">
-              <input type="text" onChange={this.update("title")} />
+        <form className = "expanded-query-bar" onSubmit={this.askQuestion}>
+            <div className="query-bar-logo">Questa</div>
+            <div className="expanded-ask-bar">
+              <textarea rows="1" onChange={this.update("title")} />
               {descriptionField}
             </div>
-            <div className="expanded_tool_bar">
+            <div className="expanded-tool-bar">
               <input type="submit" value="Just Do It!"/>
-              <button onClick={this.toggleDescriptionField}/>
+              <button type="button" onClick={this.toggleDescriptionField}/>
             </div>
-          </form>
-        </div>
+        </form>
       );
     }
-    // return (
-    //   <div className = "query_bar">
-    //     <h2>Questa</h2>
-    //     <form onSubmit={this.askQuestion}>
-    //       <div className="ask_bar">
-    //         <input type="text" onChange={this.update("title")} />
-    //         <button value = "AskQuestion"/>
-    //       </div>
-    //       <div className="tool_bar">
-    //       </div>
-    //     </form>
-    //   </div>
-    //
-    // );
+    return (
+      <form className = "query-bar" onSubmit={this.askQuestion}>
+        <div className="query-bar-logo">Questa</div>
+        <div className="ask-bar" onClick={this.toggleExpand}>
+          <textarea rows="1" onChange={this.update("title")} />
+          <input type="submit" value = "Ask Question"/>
+        </div>
+        <div className="nav-bar">
+          <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
+        </div>
+      </form>
+    );
 
 
 
@@ -87,4 +104,4 @@ class QueryBar extends React.Component {
   }
 }
 
-export default QueryBar;
+export default withRouter(QueryBar);

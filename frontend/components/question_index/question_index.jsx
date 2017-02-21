@@ -22,7 +22,8 @@ class QuestionIndex extends React.Component {
     return (
       <div className="homepage">
         <div className="header">
-          <QueryBar createQuestion={this.props.createQuestion}/>
+          <QueryBar createQuestion={this.props.createQuestion}
+            logout={this.props.logout}/>
         </div>
         <div className="main">
           <div className="left-sidebar-container">

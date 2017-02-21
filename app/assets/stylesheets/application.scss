@@ -39,4 +39,8 @@ h2 {
   margin: 0px;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 @import "components/*";
