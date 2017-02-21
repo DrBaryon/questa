@@ -10,7 +10,6 @@ class QuestionShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchQuestion(this.props.params.id);
   }
 
@@ -25,14 +24,12 @@ class QuestionShow extends React.Component {
   }
 
   render(){
-    debugger
-    if (!!this.props.question){
+    if (!this.props.question){
       return (<h2>Loading</h2>);
     }
     const question = this.props.question;
-    // const answers = question.answers.map(answer => (
-    //   <Answer key={question.id} answer={answer} />
-    // ));
+
+
     return (
       <div className="question-page">
         <div className="header">
@@ -48,14 +45,12 @@ class QuestionShow extends React.Component {
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
-              <div className="checklist">
-                <h1>checklist</h1>
-              </div>
               <div className="related-questions">
-                <h1>related</h1>
+                <h2>Related Questions</h2>
+                <a>More Related Questions</a>
               </div>
               <div className="question-stat">
-                <h1>stats</h1>
+                <h2>Question Stats</h2>
               </div>
             </div>
           </div>
@@ -66,3 +61,10 @@ class QuestionShow extends React.Component {
 }
 
 export default QuestionShow;
+
+// let answers = "";
+// if (!!question.answers){
+//   answers = question.answers.map(answer => (
+//     <Answer key={question.id} answer={answer} />
+//   ));
+// }

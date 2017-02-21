@@ -66,6 +66,17 @@
   border: 1px solid #e2e2e2;
 }
 
+.left-sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.right-sidebar-header {
+  background-color: rgb(246, 248, 249);
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
 .question_feed {
   display: flex;
   flex-flow: column;
@@ -73,7 +84,7 @@
 
 .question {
   width: 100%;
-  background-color: rgb(246, 248, 249);
+  background-color: white;
   border-bottom-color: rgb(226, 226, 226);
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -90,4 +101,8 @@
   line-height: 21px;
   text-size-adjust: 100%;
   word-wrap: break-word;
+}
+
+.question:hover {
+  background-color: rgb(246, 248, 249);
 }

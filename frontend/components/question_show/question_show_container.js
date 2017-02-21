@@ -4,7 +4,7 @@ import QuestionShow from './question_show';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    question: state.question
+    question: state.questions[ownProps.params.id]
   });
 };
 
