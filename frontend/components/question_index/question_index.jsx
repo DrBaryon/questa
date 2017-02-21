@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import QuestionIndexItem from './question_index_item';
-import QueryBar from './query_bar';
+import QueryBar from '../query_bar';
 
 class QuestionIndex extends React.Component {
   constructor(props){
@@ -16,6 +16,9 @@ class QuestionIndex extends React.Component {
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));
+    // const followedTopics = this.props.currentUser.followedTopics.map(topic => (
+    //   <li>{topic.name}</li>
+    // ));
     return (
       <div className="homepage">
         <div className="header">
@@ -24,12 +27,21 @@ class QuestionIndex extends React.Component {
         <div className="main">
           <div className="left-sidebar-container">
             <div className="left-sidebar">
-              <h1>Left</h1>
+              <div className="left-sidebar-header">
+                <h2>Feeds</h2>
+                <a>Edit</a>
+              </div>
+
+              <div className="followed-topics">
+                <ul>
+                  {"followedTopics"}
+                </ul>
+              </div>
             </div>
           </div>
           <div className="main-content">
             <div className="main-content-header">
-              <h1>Main Content</h1>
+              <h2>Main Content</h2>
             </div>
             <ul className="question-feed">
               {questionIndexItems}
@@ -37,7 +49,9 @@ class QuestionIndex extends React.Component {
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
-              <h1>Right</h1>
+              <div className="right-sidebar-header">
+                <h2>Setup Your Account</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -46,4 +60,4 @@ class QuestionIndex extends React.Component {
   }
 }
 
-export default QuestionIndex;
+export default withRouter(QuestionIndex);

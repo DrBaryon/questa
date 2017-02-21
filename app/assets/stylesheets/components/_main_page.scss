@@ -3,59 +3,106 @@
 }
 
 .header {
-  height: 50px;
+  height: 53px;
 }
 
 .main {
-  // display: flex;
-  // justify-content: center;
-  width: 1000px;
-  margin: 0px auto;
-  // background-color: red;
+  padding: 30 32 30 0;
+  background-color: white;
   position: relative;
+  width: 1000px;
+  display: block;
 }
 
 .left-sidebar-container {
   position: absolute;
-  left: 0;
+  left: 0px;
+  width: 142px;
+  margin-left: 30px;
 }
 
 .left-sidebar {
   position: fixed;
-  top: 40px;
-  background-color: blue;
-  width: 190px;
-  // height: 500px;
+  top: 83px;
+  background-color: white;
+  min-height: 1px;
+  font-size: 13px;
+  height: 500px;
+  width: 142px;
 }
 
 .main-content {
   // height: 2000px;
-  margin-left: 190px;
-  margin-right: 230px;
-  background-color: orange;
+  margin-left: 172px;
+  margin-right: 258px;
+  width: 572px;
+  min-height: 1px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  top: 83px;
 
 }
+
+.main-content-header{
+  height: 112px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
 .right-sidebar-container {
   position: absolute;
-  right: 230px;
+  right: 228px;
 }
 
 .right-sidebar {
   position: fixed;
-  top: 40px;
-  background-color: purple;
-  width: 230px;
-  // height: 500px;
+  top: 83px;
+  background-color: white;
+  width: 228px;
+  height: 500px;
+  min-height: 1px;
+  font-size: 13px;
+  border: 1px solid #e2e2e2;
+}
+
+.left-sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.right-sidebar-header {
+  background-color: rgb(246, 248, 249);
+  border-bottom: 1px solid rgb(226, 226, 226);
 }
 
 .question_feed {
-  display: block;
+  display: flex;
+  flex-flow: column;
 }
 
 .question {
-  background-color: green;
-  height: 100px;
   width: 100%;
-  padding: 16px 12px;
-  margin: -16px;
+  background-color: white;
+  border-bottom-color: rgb(226, 226, 226);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-top-color: rgb(226, 226, 226);
+  border-top-style: solid;
+  border-top-width: 1px;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  height: 208px;
+  line-height: 21px;
+  text-size-adjust: 100%;
+  word-wrap: break-word;
+}
+
+.question:hover {
+  background-color: rgb(246, 248, 249);
 }
