@@ -27,7 +27,11 @@ class QuestionIndex extends React.Component {
         <div className="main">
           <div className="left-sidebar-container">
             <div className="left-sidebar">
-              <h1>Left</h1>
+              <div className="left-sidebar-header">
+                <h2>Feeds</h2>
+                <a>Edit</a>
+              </div>
+
               <div className="followed-topics">
                 <ul>
                   {"followedTopics"}
@@ -45,7 +49,9 @@ class QuestionIndex extends React.Component {
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
-              <h1>Right</h1>
+              <div className="right-sidebar-header">
+                <h2>Setup Your Account</h2>
+              </div>
             </div>
           </div>
         </div>

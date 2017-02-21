@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 		if @user.save
 			login(@user)
+      sleep 1
 			render "api/questions/index"
 		else
 			render json: @user.errors.full_messages, status: 422
