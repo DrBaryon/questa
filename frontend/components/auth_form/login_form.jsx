@@ -10,7 +10,10 @@ class LoginForm extends React.Component{
     };
     this.handleNewSession = this.handleNewSession.bind(this);
     this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
+    this.logInGuest = this.logInGuest.bind(this);
   }
+
+  
 
 
 
@@ -42,6 +45,13 @@ class LoginForm extends React.Component{
     this.props.login({user}).then(this.redirectIfLoggedIn);
   }
 
+  logInGuest(e){
+    e.preventDefault();
+    const user = {email: "testing", password: "testing"};
+    debugger
+    this.props.login({user}).then(this.redirectIfLoggedIn);
+  }
+
   render (){
     return (
       <form onSubmit={this.handleNewSession} >
@@ -60,6 +70,7 @@ class LoginForm extends React.Component{
           </li>
           <li>
             <input type="submit" value="Log In"/>
+            <button type="button" onClick={this.logInGuest}/>
           </li>
         </ul>
       </form>

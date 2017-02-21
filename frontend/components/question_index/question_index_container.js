@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchQuestion, fetchAllQuestions, createQuestion } from '../../actions/question_actions';
+import {logout} from '../../actions/session_actions';
 import QuestionIndex from './question_index';
 
 const mapStateToProps = (state) => ({
@@ -11,7 +12,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchQuestion: id => dispatch(fetchQuestion(id)),
     fetchAllQuestions: () => dispatch(fetchAllQuestions()),
-    createQuestion: (question) => dispatch(createQuestion(question))
+    createQuestion: (question) => dispatch(createQuestion(question)),
+    logout: () => dispatch(logout())
   };
 };
 
