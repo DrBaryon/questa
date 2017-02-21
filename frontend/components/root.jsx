@@ -4,8 +4,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import App from './app';
-import AuthFormContainer from './auth_form_container';
-import QuestionIndexContainer from './question_index_container'
+import AuthFormContainer from './auth_form/auth_form_container';
+import QuestionIndexContainer from './question_index/question_index_container';
+import QuestionShowContainer from './question_show/question_show_container';
 
 
 
@@ -30,7 +31,8 @@ const Root = ({store}) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={QuestionIndexContainer} onEnter={_ensureLoggedIn} />
-          <Route path="login" component={AuthFormContainer} onEnter={_redirectIfLoggedIn}/>
+          <Route path="/login" component={AuthFormContainer} onEnter={_redirectIfLoggedIn} />
+          <Route path="/:id" component={QuestionShowContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

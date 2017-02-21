@@ -1,19 +1,19 @@
 class Api::QuestionsController < ApplicationController
 
   def index
-    sleep 1
     @questions = Question.all
   end
 
   def show
+    @question = Question.find(params[:id])
   end
 
 
 
   def create
-    debugger
     @question = current_user.questions.create!(question_params)
-    render :index
+    @question.save
+    render "api/questions/show"
   end
 
   def update
