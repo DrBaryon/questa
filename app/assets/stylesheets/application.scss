@@ -31,4 +31,12 @@ body {
     overflow-x: auto;
 }
 
+h2 {
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 16px;
+  margin: 0px;
+}
+
 @import "components/*";
