@@ -13,7 +13,7 @@ class LoginForm extends React.Component{
     this.logInGuest = this.logInGuest.bind(this);
   }
 
-  
+
 
 
 
@@ -48,7 +48,6 @@ class LoginForm extends React.Component{
   logInGuest(e){
     e.preventDefault();
     const user = {email: "testing", password: "testing"};
-    debugger
     this.props.login({user}).then(this.redirectIfLoggedIn);
   }
 

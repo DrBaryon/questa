@@ -2,8 +2,15 @@ import * as APIUtil from '../util/question_api_util';
 
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
+export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 
+export const receiveAnswer = (answer) => {
+  return {
+    type: RECEIVE_ANSWER,
+    answer
+  };
+};
 
 export const receiveQuestion = (question) => {
   return {
@@ -39,6 +46,16 @@ export const fetchAllQuestions = () => dispatch => (
 export const createQuestion = (question) => dispatch => (
   APIUtil.createQuestion(question)
     .then(newQuestion => dispatch(receiveQuestion(newQuestion)))
+);
+
+export const updateQuestion = (id) => dispatch => (
+  APIUtil.updateQuestion(id)
+    .then(updatedQuestion => dispatch(receiveQuestion(updatedQuestion)))
+);
+
+export const createAnswer = (answer) => dispatch => (
+  APIUtil.createAnswer(answer)
+    .then(newAnswer => dispatch(receiveQuestion(newAnswer)))
 );
 
 export const deleteQuestion = (id) => dispatch => (
