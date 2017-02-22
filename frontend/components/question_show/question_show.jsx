@@ -8,7 +8,7 @@ class QuestionShow extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {showAnswerForm: true};
+    this.state = {showAnswerForm: false};
     this.toggleAnswerForm = this.toggleAnswerForm.bind(this);
   }
 
@@ -63,8 +63,14 @@ class QuestionShow extends React.Component {
             <div className="question-info-header">
               <h1>{question.title}</h1>
               <h2>{question.description}</h2>
+              <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
             </div>
-            {answers}
+            <div className="answers-list">
+              <div className="answers-list-header">
+                {parseInt(answers.length) + " Answers"}
+              </div>
+              {answers}
+            </div>
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
