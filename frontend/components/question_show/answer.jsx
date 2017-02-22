@@ -8,7 +8,7 @@ class Answer extends React.Component {
     return(
       <div className="answer">
         <div className = "answer-header">
-          {answer.author.name}
+          {answer.author.first_name}
         </div>
         <div className = "answer-body">
           {answer.content}

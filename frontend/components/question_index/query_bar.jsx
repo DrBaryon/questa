@@ -72,17 +72,21 @@ class QueryBar extends React.Component {
     }
     if (this.state.expanded){
       return(
-        <form className = "expanded-query-bar" onSubmit={this.askQuestion}>
-            <div className="query-bar-logo">Questa</div>
-            <div className="expanded-ask-bar">
-              <textarea rows="1" onChange={this.update("title")} />
-              {descriptionField}
-            </div>
-            <div className="expanded-tool-bar">
-              <input type="submit" value="Just Do It!"/>
-              <button type="button" onClick={this.toggleDescriptionField}/>
-            </div>
-        </form>
+        <div className="expanded-query-bar-container">
+          <form className = "expanded-query-bar" onSubmit={this.askQuestion} onClick={null}>
+              <div className="query-bar-logo">Questa</div>
+              <div className="expanded-ask-bar">
+                <textarea rows="1" onChange={this.update("title")} />
+                {descriptionField}
+              </div>
+              <div className="expanded-tool-bar">
+                <input type="submit" value="Just Do It!"/>
+                <button type="button" onClick={this.toggleDescriptionField}/>
+              </div>
+          </form>
+          <div className="grey-modal" onClick={this.toggleExpand} />
+        </div>
+
       );
     }
     return (
