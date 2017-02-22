@@ -8,13 +8,12 @@ class QuestionShow extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {showAnswerForm: false};
+    this.state = {showAnswerForm: true};
     this.toggleAnswerForm = this.toggleAnswerForm.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.params.id);
-    this.state.showAnswerForm = false;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,14 +37,17 @@ class QuestionShow extends React.Component {
       return (<h2>Loading</h2>);
     }
     const question = this.props.question;
+    const answers = this.props.question.answers.map(answer =>
+    <Answer key={answer.id} answer={answer}/>);
     let answerform = "";
-    if (!this.state.showAnswerForm){
+    if (this.state.showAnswerForm){
       answerform =
       <div className="answer-form-container">
         <AnswerForm question={question}
           currentUser={this.props.currentUser}
           createAnswer={this.props.createAnswer}
-          updateQuestion={this.props.updateQuestion} />
+          updateQuestion={this.props.updateQuestion}
+          toggleAnswerForm={this.toggleAnswerForm}/>
         <button className="close-form" type="button" onClick={this.toggleAnswerForm}>X</button>
       </div>;
     }
@@ -61,9 +63,8 @@ class QuestionShow extends React.Component {
             <div className="question-info-header">
               <h1>{question.title}</h1>
               <h2>{question.description}</h2>
-
-
             </div>
+            {answers}
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">

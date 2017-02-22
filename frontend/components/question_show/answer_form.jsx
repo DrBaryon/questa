@@ -1,20 +1,19 @@
 import React from 'react';
+import {withRouter} from 'react-router'
 
 class AnswerForm extends React.Component {
   constructor(props){
     super(props);
-    debugger
-    this.state = {content: ""};
+    this.state = { content: "",
+      question_id: this.props.question.id };
     this.updateContent = this.updateContent.bind(this);
     this.answerQuestion = this.answerQuestion.bind(this);
   }
 
   answerQuestion(e){
     e.preventDefault();
-    debugger
     const answer = this.state;
-    this.props.createAnswer(answer);
-    this.props.updateQuestion(answer.question);
+    this.props.createAnswer(answer).then(this.props.toggleAnswerForm);
   }
 
   updateContent(e){
@@ -45,4 +44,4 @@ class AnswerForm extends React.Component {
   }
 }
 
-export default AnswerForm;
+export default withRouter(AnswerForm);

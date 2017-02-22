@@ -41,3 +41,10 @@ export const createAnswer = (answer) => {
     data: {answer}
   });
 };
+
+export const fetchAnswer = (id) => {
+  return $.ajax({
+    type: 'GET',
+    url: `/api/answers/${id}`,
+  });
+};

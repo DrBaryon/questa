@@ -55,7 +55,12 @@ export const updateQuestion = (id) => dispatch => (
 
 export const createAnswer = (answer) => dispatch => (
   APIUtil.createAnswer(answer)
-    .then(newAnswer => dispatch(receiveQuestion(newAnswer)))
+    .then(newAnswer => dispatch(receiveAnswer(newAnswer)))
+);
+
+export const fetchAnswer = (id) => dispatch => (
+  APIUtil.fetchAnswer(id)
+    .then(answer => dispatch(receiveAnswer(answer)))
 );
 
 export const deleteQuestion = (id) => dispatch => (
