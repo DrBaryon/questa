@@ -32,8 +32,10 @@ class AuthForm extends React.Component{
     return (
       <div className = "auth-form-container">
         <div className = "auth-form-big-box">
-          <h1>Questa</h1>
-          <h3> Welcome to Questa! Share your knowledge with us! </h3>
+          <div className="greeting">
+            <h1>Questa</h1>
+            <h3> Welcome to Questa! Share your knowledge with us! </h3>
+          </div>
           <div className = "auth-form-little-box" >
             <div className = "signup-form">
               <SignupForm signup={this.props.signup} />

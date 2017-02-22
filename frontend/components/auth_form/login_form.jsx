@@ -68,8 +68,8 @@ class LoginForm extends React.Component{
             </label>
           </li>
           <li>
-            <input type="submit" value="Log In"/>
-            <button type="button" onClick={this.logInGuest}/>
+            <input type="submit" value="Login"/>
+            <button type="button" onClick={this.logInGuest}>Login as Guest</button>
           </li>
         </ul>
       </form>
