@@ -27,7 +27,9 @@ class QueryBar extends React.Component {
   askQuestion(e){
     e.preventDefault();
     const question = this.state;
-    this.props.createQuestion(question);
+    this.props.createQuestion(question).then(action => {
+      this.props.router.push(`/${action.question.id}`);
+    });
   }
 
   clear(field) {
@@ -81,7 +83,7 @@ class QueryBar extends React.Component {
               </div>
               <div className="expanded-tool-bar">
                 <input type="submit" value="Just Do It!"/>
-                <button type="button" onClick={this.toggleDescriptionField}/>
+                <button type="button" onClick={this.toggleDescriptionField}>Add Description</button>
               </div>
           </form>
           <div className="grey-modal" onClick={this.toggleExpand} />

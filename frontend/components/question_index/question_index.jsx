@@ -32,12 +32,9 @@ class QuestionIndex extends React.Component {
                 <h2>Feeds</h2>
                 <a>Edit</a>
               </div>
-
-              <div className="followed-topics">
-                <ul>
-                  {"followedTopics"}
-                </ul>
-              </div>
+              <ul className="topics-list">
+                <li>Top Stories</li>
+              </ul>
             </div>
           </div>
           <div className="main-content">

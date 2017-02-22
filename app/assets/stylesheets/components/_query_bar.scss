@@ -114,7 +114,23 @@
 }
 
 .expanded-tool-bar > button {
-  width: 27px;
+  opacity: .5;
+  box-sizing: border-box;
+  transition: opacity ease-in-out 100ms,color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
+  display: inline-block;
+  font-weight: 500;
+  outline: 0;
+  padding: 3px 7px 4px 7px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: #3e78ad;
+  color: #fff;
+  border: 1px solid #3a66ad;
+  box-shadow: 0 1px 1px 0 rgba(200,200,200,0.6);
+  width: 150px;
 }
 
 .titleField{

@@ -23,6 +23,10 @@
 
 }
 
+div {
+  display: block;
+}
+
 body {
     height: 100%;
     word-wrap: break-word;
@@ -35,6 +39,10 @@ body {
 }
 
 h2 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
   color: #333;
   font-weight: 500;
   font-size: 15px;
@@ -50,6 +58,10 @@ ul{
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0px;
+}
+
+a {
+  text-decoration: none;
 }
 
 a:hover {

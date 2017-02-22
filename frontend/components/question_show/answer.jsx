@@ -4,14 +4,16 @@ class Answer extends React.Component {
 
 
   render(){
-    const answer = this.props.answer;
+    if (!this.props.answer){
+      return (<h2>Loading</h2>);
+    }
     return(
       <div className="answer">
         <div className = "answer-header">
-          {answer.author.first_name}
+          {this.props.answer.author.first_name}
         </div>
         <div className = "answer-body">
-          {answer.content}
+          {this.props.answer.content}
         </div>
         <div className = "answer-footer">
         </div>
