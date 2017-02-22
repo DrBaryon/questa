@@ -47,7 +47,7 @@ class LoginForm extends React.Component{
 
   logInGuest(e){
     e.preventDefault();
-    const user = {email: "testing", password: "testing"};
+    const user = {email: "guest", password: "guestlog"};
     this.props.login({user}).then(this.redirectIfLoggedIn);
   }
 

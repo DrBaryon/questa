@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :questions, foreign_key: :author_id
+  has_many :answers, class_name: "Answer", foreign_key: :author_id
   has_many :follows, foreign_key: :user_id
   has_many :favorite_topics, through: :follows, source: :topic
 

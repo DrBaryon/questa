@@ -1,9 +1,7 @@
 import React from 'react';
 
 class Answer extends React.Component {
-  constructor(props){
-    super(props);
-  }
+
 
   render(){
     const answer = this.props.answer;
