@@ -8,16 +8,16 @@ class Answer extends React.Component {
       return (<h2>Loading</h2>);
     }
     return(
-      <div className="answer">
+      <li className="answer">
         <div className = "answer-header">
-          {this.props.answer.author.first_name}
+          {this.props.answer.author.first_name + " " + this.props.answer.author.last_name}
         </div>
         <div className = "answer-body">
           {this.props.answer.content}
         </div>
         <div className = "answer-footer">
         </div>
-      </div>
+      </li>
     );
   }
 }

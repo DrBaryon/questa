@@ -38,15 +38,19 @@ body {
     padding: 0px;
 }
 
-h2 {
+h1, h2{
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+}
+
+
+h2 {
   color: #333;
   font-weight: 500;
   font-size: 15px;
-  padding: 16px;
+  padding: 0px;
   margin: 0px;
 }
 

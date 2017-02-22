@@ -52,15 +52,16 @@
   margin-right: 228px;
 }
 
-.right-sidebar {
+.homepage .right-sidebar {
+  border: 1px solid #e2e2e2;
+  height: 500px;
   position: fixed;
   top: 83px;
   width: 228px;
-  height: 500px;
   min-height: 1px;
   font-size: 13px;
-  border: 1px solid #e2e2e2;
 }
+
 
 .left-sidebar-header{
   display: flex;
