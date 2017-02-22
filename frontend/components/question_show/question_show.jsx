@@ -63,24 +63,30 @@ class QuestionShow extends React.Component {
             <div className="question-info-header">
               <h1>{question.title}</h1>
               <h2>{question.description}</h2>
-              <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
-            </div>
-            <div className="answers-list">
-              <div className="answers-list-header">
-                {parseInt(answers.length) + " Answers"}
+              <div className="question-toolbar">
+                <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
               </div>
-              {answers}
             </div>
+            <div className="answers-list-header">
+                {parseInt(answers.length) + " Answers"}
+            </div>
+            <ul className="answers-list">
+                {answers}
+            </ul>
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
-              <div className="related-questions">
-                <h2>Related Questions</h2>
-                <a>More Related Questions</a>
-              </div>
-              <div className="question-stat">
-                <h2>Question Stats</h2>
-              </div>
+              <h2>Related Questions</h2>
+              <ul className="related-questions">
+                <li><a>Related Question 1</a></li>
+                <li><a>Related Question 2</a></li>
+              </ul>
+              <a>More Related Questions</a>
+              <h2>Question Stats</h2>
+              <ul className="question-stats">
+                <li><a>Related Question 1</a></li>
+              </ul>
+              <a>More Question Stats</a>
             </div>
           </div>
         </div>
