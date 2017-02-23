@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #   end
 
   namespace :api, defaults: {format: :json} do
-    resources :questions, :answers
+    resources :questions, :answers, :comments
     resource :user
     resource :session
   end

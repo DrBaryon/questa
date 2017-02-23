@@ -1,0 +1,102 @@
+.answer{
+  padding: 16px 0 16px 0;
+  border-bottom: 1px solid #e2e2e2;
+  display: block;
+  font-size: 15px;
+  line-height: 24px;
+  text-size-adjust: 100%;
+}
+
+.answer a{
+  color: rgb(153, 153, 153);
+  display: inline;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.answer-header{
+  padding-bottom: 5px;
+  vertical-align: middle;
+}
+
+.answer-header img{
+  float: left;
+  padding-bottom: 5px;
+  vertical-align: middle;
+}
+
+.answer-header span {
+  display: table-cell;
+  vertical-align: middle;
+  height: 40px;
+  padding-left: 8px;
+}
+
+.answer-comments {
+  padding: 8px;
+  margin-top: 8px;
+  background-color: rgb(246, 246, 246);
+
+}
+
+.comment-form textarea {
+  white-space: pre-wrap;
+  outline: 0;
+  tab-size: 2em;
+  box-sizing: border-box;
+  width: 400px;
+  margin: 0 auto;
+  word-break: break-word;
+  padding: 3px 0 0 4px;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 13px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  min-height: 27px;
+  line-height: 1.5;
+  border: 1px solid #e2e2e2;
+  vertical-align: middle;
+}
+
+.comment-form img {
+  padding-right: 12px;
+  float: left;
+}
+
+.comment-form input {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(62, 120, 173);
+  background-origin: padding-box;
+  background-size: auto;
+  border: 1px solid rgb(58, 102, 173);
+  border-radius: 3px;
+  box-shadow: rgba(200, 200, 200, 0.6) 0px 1px 1px 0px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  height: 27px;
+  line-height: 18.2px;
+  padding: 3px 7px 4px 7px;
+  text-align: center;
+  text-decoration: none;
+  text-size-adjust: 100%;
+  transition-delay: 0s, 0s, 0s, 0s;
+  transition-duration: 0.1s, 0.1s, 0.1s, 0.1s;
+  transition-property: opacity, color, background-color, border-color;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: 74.7344px;
+  word-wrap: break-word;
+  float: right;
+}
+
+.comment-list {
+  list-style: none;
+}
