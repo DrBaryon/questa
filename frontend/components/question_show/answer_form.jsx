@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router'
+import {withRouter} from 'react-router';
 
 class AnswerForm extends React.Component {
   constructor(props){
@@ -31,6 +31,7 @@ class AnswerForm extends React.Component {
           <h2>{question.description}</h2>
         </div>
         <div className="author-info">
+          <img src={this.props.currentUser.avatar_url} width="40" height="40"/>
           {this.props.currentUser.first_name + " " +
           this.props.currentUser.last_name}
           <div className="other-info">
