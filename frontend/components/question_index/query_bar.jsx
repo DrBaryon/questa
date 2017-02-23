@@ -9,6 +9,7 @@ class QueryBar extends React.Component {
     this.askQuestion = this.askQuestion.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
+    this.goHome = this.goHome.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
@@ -56,6 +57,11 @@ class QueryBar extends React.Component {
     });
   }
 
+  goHome(e){
+    e.preventDefault();
+    this.props.router.push("/");
+  }
+
   handleLogout(e){
     e.preventDefault();
     this.props.logout().then(this.redirectIfLoggedOut);
@@ -76,7 +82,7 @@ class QueryBar extends React.Component {
       return(
         <div className="expanded-query-bar-container">
           <form className = "expanded-query-bar" onSubmit={this.askQuestion} onClick={null}>
-              <div className="query-bar-logo">Questa</div>
+              <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
               <div className="expanded-ask-bar">
                 <textarea rows="1" onChange={this.update("title")} />
                 {descriptionField}
@@ -93,7 +99,7 @@ class QueryBar extends React.Component {
     }
     return (
       <form className = "query-bar" onSubmit={this.askQuestion}>
-        <div className="query-bar-logo">Questa</div>
+        <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
         <div className="ask-bar" onClick={this.toggleExpand}>
           <textarea rows="1" onChange={this.update("title")} />
           <input type="submit" value = "Ask Question"/>

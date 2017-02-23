@@ -47,7 +47,8 @@ class LoginForm extends React.Component{
 
   logInGuest(e){
     e.preventDefault();
-    const user = {email: "guest", password: "guestlog"};
+    const user = {email: "guest", password: "guestlog",
+      avatar_url: "http://simplerev.com/wp-content/uploads/Generic-Avatar.jpg"};
     this.props.login({user}).then(this.redirectIfLoggedIn);
   }
 
