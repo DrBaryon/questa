@@ -1,12 +1,15 @@
 import React from 'react';
 import CommentForm from './comment_form';
-import Comment from './comment'
+import Comment from './comment';
 
 class Answer extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {comments: {}, showComments: false };
+    if (this.props.comments){
+      this.state.comments = this.props.comments;
+    }
     this.toggleComments = this.toggleComments.bind(this);
   }
 
@@ -21,7 +24,7 @@ class Answer extends React.Component {
     if (!this.props.answer){
       return (<h2>Loading</h2>);
     }
-    const comments = this.props.answer.comments.map(comment =>
+    const comments = this.state.comments.map(comment =>
       <Comment key={comment.id} comment={comment}/>);
     let answerComments = "";
     if (this.state.showComments){
