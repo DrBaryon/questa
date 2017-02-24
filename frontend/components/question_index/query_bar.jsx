@@ -105,6 +105,9 @@ class QueryBar extends React.Component {
           <input type="submit" value = "Ask Question"/>
         </div>
         <div className="nav-bar">
+          <button>Read</button>
+          <button>Answer</button>
+          <button>Notifications</button>
           <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
         </div>
       </form>
@@ -117,3 +120,5 @@ class QueryBar extends React.Component {
 }
 
 export default withRouter(QueryBar);
+
+//<img width="20" height="20" src="https://qsf.ec.quoracdn.net/-3-images.feed2.svg-26-27d3066097b99f1c.svg"/>

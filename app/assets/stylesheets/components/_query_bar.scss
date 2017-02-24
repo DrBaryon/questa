@@ -156,6 +156,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  min-width: 1200px;
   display: flex;
   justify-content: center;
   height: 50px;
@@ -177,7 +178,9 @@
 
 .ask-bar {
   box-sizing: border-box;
-  width: 64%;
+  min-width: 314px;
+  max-width: 493px;
+  width: 100%;
   padding: 10px 0 11px 14px;
   display: flex;
 }
@@ -217,7 +220,7 @@
   transition-timing-function: ease, ease, ease;
   user-select: text;
   white-space: pre-wrap;
-  width: 627px;
+  width: 100%;
   word-spacing: 0px;
   word-wrap: break-word;
   z-index: 1;
@@ -259,8 +262,10 @@
 }
 
 .nav-bar {
-  width: 200px;
+  display: flex;
+  width: 413px;
   height: 50px;
+  margin-left: 8px;
 }
 
 .nav-bar button{
@@ -268,16 +273,16 @@
   font-weight: 500;
   color: #999;
   line-height: 50px;
-}
-
-.logout-button {
-  float: right;
-  width: 90px;
+  padding-left: 36px;
   height: 50px;
   border: 0;
   background-color: white;
 }
 
-.logout-button:hover {
-  background-color: rgb(246, 248, 249);
+.nav-bar button:hover {
+  background-color: #ced1e1;
+}
+
+.nav-bar button:active {
+  color: rgb(185, 43, 39)
 }
