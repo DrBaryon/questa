@@ -6,7 +6,7 @@ class Answer extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {comments: {}, showComments: false };
+    this.state = {comments: [], showComments: false };
     if (this.props.comments){
       this.state.comments = this.props.comments;
     }
