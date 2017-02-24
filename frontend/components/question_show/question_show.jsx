@@ -36,14 +36,20 @@ class QuestionShow extends React.Component {
     if (!this.props.question){
       return (<h2>Loading</h2>);
     }
-    const question = this.props.question;
-    const answers = this.props.question.answers.map(answer =>
-    <Answer key={answer.id} answer={answer}/>);
+    let answers = [];
+
+    if (this.props.question.answers){
+      answers = this.props.question.answers.map(answer =>
+      <Answer key={answer.id} answer={answer}
+        currentUser={this.props.currentUser}
+        createComment={this.props.createComment}
+        receiveAnswer={this.props.receiveAnswer}/>);
+    }
     let answerform = "";
     if (this.state.showAnswerForm){
       answerform =
       <div className="answer-form-container">
-        <AnswerForm question={question}
+        <AnswerForm question={this.props.question}
           currentUser={this.props.currentUser}
           createAnswer={this.props.createAnswer}
           updateQuestion={this.props.updateQuestion}
@@ -61,8 +67,8 @@ class QuestionShow extends React.Component {
         <div className="main">
           <div className="main-content">
             <div className="question-info-header">
-              <h1>{question.title}</h1>
-              <h2>{question.description}</h2>
+              <h1>{this.props.question.title}</h1>
+              <h2>{this.props.question.description}</h2>
               <div className="question-toolbar">
                 <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
               </div>

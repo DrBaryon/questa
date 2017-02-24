@@ -12,16 +12,18 @@ class QuestionIndexItem extends React.Component {
       <li className="question">
         <div className="question-header">
           <a href={"/#/" + this.props.question.id}>{this.props.question.title}</a>
-          <div className="question-author-info">
-            <img src={this.props.question.user.avatar_url} width="40" height="40"/>
-            {this.props.question.user.first_name + " " +
-            this.props.question.user.last_name}
-          </div>
         </div>
         <div className="best-answer">
-          {bestAnswer.content}
-        </div>
-        <div className = "question-footer">
+          <div className="best-answer-header">
+            <img src={bestAnswer.author.avatar_url} width="40" height="40"/>
+            {bestAnswer.author.first_name + " " +
+            bestAnswer.author.last_name}
+          </div>
+          <div className="best-answer-content">
+            {bestAnswer.content}
+          </div>
+          <div className = "best-answer-footer">
+          </div>
         </div>
 
       </li>

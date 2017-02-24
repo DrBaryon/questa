@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_avatar_url
 
+  has_many :comments, foreign_key: :author_id
   has_many :questions, foreign_key: :author_id
   has_many :answers, class_name: "Answer", foreign_key: :author_id
   has_many :follows, foreign_key: :user_id
@@ -40,6 +41,10 @@ class User < ActiveRecord::Base
 	def ensure_session_token
 		self.session_token ||= new_session_token
 	end
+
+  def ensure_avatar_url
+    self.avatar_url ||= "http://simplerev.com/wp-content/uploads/Generic-Avatar.jpg"
+  end
 
 	def new_session_token
 		SecureRandom.urlsafe_base64
