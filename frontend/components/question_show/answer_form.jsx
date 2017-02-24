@@ -32,8 +32,8 @@ class AnswerForm extends React.Component {
         </div>
         <div className="author-info">
           <img src={this.props.currentUser.avatar_url} width="40" height="40"/>
-          {this.props.currentUser.first_name + " " +
-          this.props.currentUser.last_name}
+          <span>{this.props.currentUser.first_name + " " +
+          this.props.currentUser.last_name}</span>
           <div className="other-info">
           </div>
         </div>
