@@ -26,7 +26,7 @@ class AnswerForm extends React.Component {
     const question = this.props.question;
     return(
       <form className="answer-form" onSubmit={this.answerQuestion}>
-        <div className="header">
+        <div className="answer-form-header">
           <a><h1>{question.title}</h1></a>
           <h2>{question.description}</h2>
         </div>
