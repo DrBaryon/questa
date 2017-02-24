@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     @user.avatar_url = "http://simplerev.com/wp-content/uploads/Generic-Avatar.jpg"
 		if @user.save
 			login(@user)
-			render "api/questions/index"
+			render "api/users/show"
 		else
 			render json: @user.errors.full_messages, status: 422
 		end

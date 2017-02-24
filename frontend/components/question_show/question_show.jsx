@@ -84,13 +84,13 @@ class QuestionShow extends React.Component {
             <div className="right-sidebar">
               <h2>Related Questions</h2>
               <ul className="related-questions">
-                <li><a>Related Question 1</a></li>
-                <li><a>Related Question 2</a></li>
+                <li><a>Related Question</a></li>
+                <li><a>Another Related Question</a></li>
               </ul>
               <a>More Related Questions</a>
               <h2>Question Stats</h2>
               <ul className="question-stats">
-                <li><a>Related Question 1</a></li>
+                <li><a>Stats for days</a></li>
               </ul>
               <a>More Question Stats</a>
             </div>

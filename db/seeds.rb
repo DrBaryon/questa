@@ -11,14 +11,25 @@ Question.destroy_all
 Answer.destroy_all
 Comment.destroy_all
 
+User.destroy_all
+Question.destroy_all
+Answer.destroy_all
+Comment.destroy_all
+
 user1 = User.create(email: "guest", password: "guestlog", first_name: "Anonymous", last_name: "Guest")
-user2 = User.create(email: "snailmail@gmail.com", password: "snailirl", first_name: "Hugh", last_name: "Mannandnotsnail")
+user2 = User.create(email: "snailirl@gmail.com", password: "snailirl", first_name: "Hugh", last_name: "Mannotsnail")
+user3 = User.create(email: "memetichazard@gmail.com", password: "dankmemes", first_name: "Joe", last_name: "Schmo")
+user4 = User.create(email: "lumberjack@gmail.com", password: "chopchop", first_name: "Unlucky", last_name: "Lumberjack")
+user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", first_name: "Chad", last_name: "Bergman")
 
 
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
-and you both become immortal, however you die if the snail touches you.
-It always knows where you are and slowly crawls toward you. WHat's your plan?",
-description: "", author_id: user1.id)
+  and you both become immortal, however you die if the snail touches you.
+  It always knows where you are and slowly crawls toward you. WHat's your plan?",
+  description: "", author_id: user1.id)
+question2 = Question.create(title: "How much wood could a woodchuck chuck if a woodchuck could chuck wood?",
+  description: "Please answer quick he keeps throwing wood at me and it's starting to hurt.",
+  author_id: user4.id)
 
 answer1 = Answer.create(question_id: question1.id, author_id: user2.id, content: "Ok, let's do this.
   First things first - That million dollars is practically worthless compared to immortality. Every dime of that cash can and should be spent ensuring that the snail never, ever reaches me.
@@ -38,3 +49,10 @@ answer1 = Answer.create(question_id: question1.id, author_id: user2.id, content:
   And then I board a ship. A fast ship. I accelerate to as close to lightspeed as I can get, piloting directly away from the black hole with the snail inside. I want to be so far away and moving so quickly that the heat death of the universe would occur far, far before the snail ever reaches me, even on the fastest ship his freakishly clever little brain can construct.
   So that's the way the universe ends. With nothing it in except for infrared heat, one hyperintelligent snail suspended in an inky void, and one human screaming away from it at .99C.
   Cheers.")
+answer2 = Answer.create(question_id: question2.id, author_id: user3.id,
+  content: "All of it. All of the wood.")
+
+comment1 = Comment.create(content: "Decoy snail.", commentable_id: answer1.id,
+  commentable_type: "Answer", author_id: user3.id )
+comment2 = Comment.create(content: "I do not know why I thought that information
+would help my situation but thanks.", commentable_id: answer2.id, commentable_type: "Answer", author_id: user4.id )

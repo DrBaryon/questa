@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 
-export default class SignupForm extends React.Component{
+class SignupForm extends React.Component{
 
   constructor(props){
     super(props);
@@ -10,6 +10,7 @@ export default class SignupForm extends React.Component{
     };
     this.handleNewUser = this.handleNewUser.bind(this);
     this.toggleHidden = this.toggleHidden.bind(this);
+    this.redirectIfLoggedIn = this.redirectIfLoggedIn.bind(this);
   }
 
   update(field) {
@@ -19,9 +20,7 @@ export default class SignupForm extends React.Component{
 	}
 
   redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
-		}
+		this.props.router.push("/");
 	}
 
   renderErrors() {
@@ -45,7 +44,7 @@ export default class SignupForm extends React.Component{
   handleNewUser(e){
     e.preventDefault();
     const user = this.state;
-    this.props.signup({user});
+    this.props.signup({user}).then(this.redirectIfLoggedIn);
   }
 
   render (){
@@ -89,3 +88,5 @@ export default class SignupForm extends React.Component{
     );
   }
 }
+
+export default withRouter(SignupForm);

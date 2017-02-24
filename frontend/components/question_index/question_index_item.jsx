@@ -4,7 +4,7 @@ class QuestionIndexItem extends React.Component {
 
   render(){
     // const tag = Object.keys(this.props.question.topics)[0];
-    let bestAnswer = {};
+    let bestAnswer = {author: {avatar_url: "", first_name: "", last_name: ""}};
     if (!!this.props.question.answers[0]){
       bestAnswer = this.props.question.answers[0];
     }
@@ -23,6 +23,7 @@ class QuestionIndexItem extends React.Component {
             {bestAnswer.content}
           </div>
           <div className = "best-answer-footer">
+            <a>Comment</a>
           </div>
         </div>
 
