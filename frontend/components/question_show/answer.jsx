@@ -6,10 +6,7 @@ class Answer extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {comments: [], showComments: false };
-    if (this.props.comments){
-      this.state.comments = this.props.comments;
-    }
+    this.state = { showComments: false };
     this.toggleComments = this.toggleComments.bind(this);
   }
 
@@ -24,8 +21,11 @@ class Answer extends React.Component {
     if (!this.props.answer){
       return (<h2>Loading</h2>);
     }
-    const comments = this.state.comments.map(comment =>
-      <Comment key={comment.id} comment={comment}/>);
+    let comments = [];
+    if (this.props.answer.comments){
+      comments = this.props.answer.comments.map(comment =>
+        <Comment key={comment.id} comment={comment}/>);
+    }
     let answerComments = "";
     if (this.state.showComments){
       answerComments =

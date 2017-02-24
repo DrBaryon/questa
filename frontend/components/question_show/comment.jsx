@@ -7,6 +7,7 @@ class Comment extends React.Component {
     if (!this.props.comment){
       return (<h2>Loading</h2>);
     }
+    debugger
     return(
       <li className="comment">
         <div className = "comment-header">
