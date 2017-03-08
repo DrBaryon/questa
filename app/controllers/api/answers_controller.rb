@@ -1,5 +1,8 @@
 class Api::AnswersController < ApplicationController
 
+  def index
+  end
+
   def create
     @answer = current_user.answers.create!(answer_params)
     render "api/answers/show"

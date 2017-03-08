@@ -8,7 +8,7 @@ class QuestionIndexItem extends React.Component {
     // if (!!this.props.question.answers[0]){
     //   bestAnswer = this.props.question.answers[0];
     // }
-    const question = this.props.question;
+    let question = this.props.question;
     return(
       <li className="question">
         <div className="question-header">
