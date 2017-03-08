@@ -8,6 +8,7 @@ class Answer extends React.Component {
     super(props);
     this.state = { showComments: false };
     this.toggleComments = this.toggleComments.bind(this);
+    this.deleteAnswer = this.deleteAnswer.bind(this);
   }
 
   toggleComments(){
@@ -16,6 +17,11 @@ class Answer extends React.Component {
     });
   }
 
+  deleteAnswer(){
+    if (this.props.answer.author.id === this.props.currentUser.id){
+      this.props.deleteAnswer(this.props.answer.id);
+    }
+  }
 
   render(){
     if (!this.props.answer){
@@ -53,6 +59,7 @@ class Answer extends React.Component {
         </div>
         <div className = "answer-footer">
           <a onClick={this.toggleComments}>View Comments</a>
+          <a onClick={this.deleteAnswer}>Delete</a>
         </div>
         {answerComments}
       </li>

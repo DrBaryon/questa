@@ -1,14 +1,14 @@
 class Api::AnswersController < ApplicationController
 
-  validate
-
   def create
     @answer = current_user.answers.create!(answer_params)
     render "api/answers/show"
   end
 
   def destroy
-
+    @answer = current_user.answers.find(params[:id])
+    @answer.delete
+    render "api/answers/show"
   end
 
   private

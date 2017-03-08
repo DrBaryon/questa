@@ -10,6 +10,7 @@ const QuestionReducer = (state = {}, action) => {
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
     case REMOVE_QUESTION:
+      debugger
       delete newState[action.question.id];
       return newState;
     case RECEIVE_ANSWER:
@@ -17,7 +18,8 @@ const QuestionReducer = (state = {}, action) => {
       return merge({}, state, {[answer.question.id]: {["answers"]:
         {[answer.id]: answer}}});
     case REMOVE_ANSWER:
-      delete newState[answer.question.id].answers[answer.id];
+      debugger
+      delete newState[action.answer.question.id].answers[action.answer.id];
       return newState;
     case RECEIVE_COMMENT:
       const comment = action.comment;

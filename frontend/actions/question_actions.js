@@ -5,7 +5,8 @@ export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
-export const REMOVE_ANSWER = 'REMOVE_QUESTION';
+export const REMOVE_ANSWER = 'REMOVE_ANSWER';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const receiveAnswer = (answer) => {
   return {
@@ -17,13 +18,20 @@ export const receiveAnswer = (answer) => {
 export const removeAnswer = (answer) => {
   return {
     type: REMOVE_ANSWER,
-    question
+    answer
   };
 };
 
 export const receiveComment = (comment) => {
   return {
     type: RECEIVE_COMMENT,
+    comment
+  };
+};
+
+export const removeComment = (comment) => {
+  return {
+    type: REMOVE_COMMENT,
     comment
   };
 };
@@ -87,7 +95,17 @@ export const updateAnswer = (answer) => dispatch => (
     .then(updatedAnswer => dispatch(receiveAnswer(newAnswer)))
 );
 
+export const deleteAnswer = (id) => dispatch => (
+  APIUtil.deleteAnswer(id)
+    .then(answer => dispatch(removeAnswer(answer)))
+);
+
 export const createComment = (comment) => dispatch => (
   APIUtil.addComment(comment)
     .then( newComment => dispatch(receiveComment(newComment)))
+);
+
+export const deleteComment = (id) => dispatch => (
+  APIUtil.deleteComment(id)
+    .then(comment => dispatch(removeComment(comment)))
 );

@@ -65,3 +65,10 @@ export const addComment = (comment) => {
     data: {comment}
   });
 };
+
+export const deleteComment = (id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/comments/${id}`
+  });
+};

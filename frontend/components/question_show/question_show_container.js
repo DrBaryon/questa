@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchQuestion, createQuestion, createAnswer, createComment, deleteQuestion} from '../../actions/question_actions';
+import { fetchQuestion, createQuestion, createAnswer, createComment,
+  deleteQuestion, deleteAnswer} from '../../actions/question_actions';
 import {logout} from '../../actions/session_actions';
 import QuestionShow from './question_show';
 
@@ -16,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
     createAnswer: answer => dispatch(createAnswer(answer)),
     createQuestion: question => dispatch(createQuestion(question)),
     deleteQuestion: id => dispatch(deleteQuestion(id)),
+    deleteAnswer: id => dispatch(deleteAnswer(id)),
     createComment: comment => dispatch(createComment(comment)),
     receiveAnswer: answer => dispatch(receiveAnswer(answer)),
     logout: () => dispatch(logout())

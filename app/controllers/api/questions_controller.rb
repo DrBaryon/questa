@@ -11,8 +11,8 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    @question.delete 
+    @question = current_user.questions.find(params[:id])
+    @question.delete
     redirect_to "/#/"
   end
 
@@ -25,7 +25,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:id])
+    @question = current_user.questions.find(params[:id])
     @question.update_attributes(question_params)
     render :show
   end

@@ -35,7 +35,6 @@ class QuestionShow extends React.Component {
 
   deleteQuestion(){
     if (this.props.question.author.id === this.props.currentUser.id){
-      debugger
       this.props.deleteQuestion(this.props.question.id);
       this.props.router.push("/");
     }
@@ -45,14 +44,14 @@ class QuestionShow extends React.Component {
     if (!this.props.question){
       return (<h2>Loading</h2>);
     }
-    let answers = [];
-
+    let answers = {};
     if (this.props.question.answers){
       answers = this.props.question.answers.map(answer =>
       <Answer key={answer.id} answer={answer}
         currentUser={this.props.currentUser}
         createComment={this.props.createComment}
-        receiveAnswer={this.props.receiveAnswer}/>);
+        receiveAnswer={this.props.receiveAnswer}
+        deleteAnswer={this.props.deleteAnswer}/>);
     }
     let answerform = "";
     if (this.state.showAnswerForm){
