@@ -49,6 +49,15 @@ export const fetchAnswer = (id) => {
   });
 };
 
+export const deleteAnswer = (id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/answers/${id}`
+  });
+};
+
+
+
 export const addComment = (comment) => {
   return $.ajax({
     type: 'POST',

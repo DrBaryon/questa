@@ -1,4 +1,4 @@
-import {RECEIVE_QUESTION, RECEIVE_ALL_QUESTIONS, REMOVE_QUESTION, RECEIVE_ANSWER, RECEIVE_COMMENT} from '../actions/question_actions';
+import {RECEIVE_QUESTION, RECEIVE_ALL_QUESTIONS, REMOVE_QUESTION, RECEIVE_ANSWER, REMOVE_ANSWER, RECEIVE_COMMENT} from '../actions/question_actions';
 import merge from 'lodash/merge';
 
 const QuestionReducer = (state = {}, action) => {
@@ -16,6 +16,9 @@ const QuestionReducer = (state = {}, action) => {
       const answer = action.answer;
       return merge({}, state, {[answer.question.id]: {["answers"]:
         {[answer.id]: answer}}});
+    case REMOVE_ANSWER:
+      delete newState[answer.question.id].answers[answer.id];
+      return newState;
     case RECEIVE_COMMENT:
       const comment = action.comment;
       for (let id in newState) {

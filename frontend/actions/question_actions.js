@@ -5,11 +5,19 @@ export const RECEIVE_ALL_QUESTIONS = 'RECEIVE_ALL_QUESTIONS';
 export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+export const REMOVE_ANSWER = 'REMOVE_QUESTION';
 
 export const receiveAnswer = (answer) => {
   return {
     type: RECEIVE_ANSWER,
     answer
+  };
+};
+
+export const removeAnswer = (answer) => {
+  return {
+    type: REMOVE_ANSWER,
+    question
   };
 };
 

@@ -10,6 +10,7 @@ class QuestionShow extends React.Component {
     super(props);
     this.state = {showAnswerForm: false};
     this.toggleAnswerForm = this.toggleAnswerForm.bind(this);
+    this.deleteQuestion = this.deleteQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,14 @@ class QuestionShow extends React.Component {
     this.setState({
       showAnswerForm: !this.state.showAnswerForm
     });
+  }
+
+  deleteQuestion(){
+    if (this.props.question.author.id === this.props.currentUser.id){
+      debugger
+      this.props.deleteQuestion(this.props.question.id);
+      this.props.router.push("/");
+    }
   }
 
   render(){
@@ -71,6 +80,7 @@ class QuestionShow extends React.Component {
               <h2>{this.props.question.description}</h2>
               <div className="question-toolbar">
                 <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
+                <button className="answer-button" type="button" onClick={this.deleteQuestion}>Delete</button>
               </div>
             </div>
             <div className="answers-list-header">
