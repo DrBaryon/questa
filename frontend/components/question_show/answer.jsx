@@ -44,9 +44,9 @@ class Answer extends React.Component {
           commentableId={this.props.answer.id}
           currentUser={this.props.currentUser}
           />
-        <ul className="comment-list">
+        <div className="comment-list">
           {comments}
-        </ul>
+        </div>
       </div>;
     }
     return(

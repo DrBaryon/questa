@@ -7,7 +7,7 @@ class Comment extends React.Component {
     super(props);
     this.state = { showComments: false, showCommentForm: false };
     this.toggleCommentForm = this.toggleCommentForm.bind(this);
-    this.toggleComments = this.toggleComments.bind(this);
+    // this.toggleComments = this.toggleComments.bind(this);
   }
 
   toggleCommentForm(){
@@ -16,19 +16,18 @@ class Comment extends React.Component {
     });
   }
 
-  toggleComments(){
-    this.setState({
-      showComments: !this.state.showComments
-    });
-  }
+  // toggleComments(){
+  //   this.setState({
+  //     showComments: !this.state.showComments
+  //   });
+  // }
 
   render(){
     if (!this.props.comment){
       return (<h2>Loading</h2>);
     }
-    debugger
     return(
-      <li className="comment">
+      <div className="comment">
         <div className = "comment-header">
           <img src={this.props.comment.author.avatar_url} width="25" height="25"/>
           <span>{this.props.comment.author.first_name + " " + this.props.comment.author.last_name}</span>
@@ -39,7 +38,7 @@ class Comment extends React.Component {
         <div className = "comment-footer">
           <button type="button" onClick={this.toggleCommentForm}>Reply</button>
         </div>
-        <div className = "answer-comments">
+        <div className = "comment-comments">
           {
             this.state.showCommentForm &&
             <CommentForm
@@ -51,15 +50,16 @@ class Comment extends React.Component {
               currentUser={this.props.currentUser}
               />
           }
-          <ul className="comment-list">
+          <div className="comment-list">
             {this.props.comment.comments &&
-              this.state.showComments &&
               this.props.comment.comments.map(comment =>
-                <Comment key={comment.id} comment={comment}/>)}
-          </ul>
+                <div>
+                  <Comment key={comment.id} comment={comment}/>
+                </div>)}
+          </div>
         </div>
 
-      </li>
+      </div>
     );
   }
 }
