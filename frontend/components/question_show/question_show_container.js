@@ -13,10 +13,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchQuestion: id => dispatch(fetchQuestion(id)),
-    createAnswer: answer => dispatch(createAnswer(answer)),
     createQuestion: question => dispatch(createQuestion(question)),
+    updateQuestion: id => dispatch(fetchQuestion(id)),
+    createAnswer: answer => dispatch(createAnswer(answer)),
     createComment: comment => dispatch(createComment(comment)),
-    receiveAnswer: answer => dispatch(receiveAnswer(answer)),
     logout: () => dispatch(logout())
   };
 };

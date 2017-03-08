@@ -63,9 +63,10 @@ class QuestionShow extends React.Component {
               </div>
             </div>
             { this.props.question.answers &&
-              <AnswerList answers={this.props.question.answers}
+              <AnswerList question={this.props.question}
               currentUser={this.props.currentUser}
               createAnswer={this.props.createAnswer}
+              createComment={this.props.createComment}
               updateQuestion={this.props.updateQuestion}
               toggleAnswerForm={this.toggleAnswerForm}/>
             }

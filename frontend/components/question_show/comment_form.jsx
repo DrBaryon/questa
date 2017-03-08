@@ -15,7 +15,8 @@ class CommentForm extends React.Component {
   addComment(e){
     e.preventDefault();
     const comment = this.state;
-    this.props.createComment(comment);
+    this.props.createComment(comment)
+    .then(this.props.updateQuestion(this.props.question.id));
   }
 
   updateContent(e){

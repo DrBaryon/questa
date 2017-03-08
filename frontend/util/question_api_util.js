@@ -20,12 +20,6 @@ export const createQuestion = (question) => {
   });
 };
 
-export const updateQuestion = (id) => {
-  return $.ajax({
-    type: 'PATCH',
-    url: `/api/questions/${id}`
-  });
-};
 
 export const deleteQuestion = (id) => {
   return $.ajax({
@@ -48,6 +42,7 @@ export const fetchAnswer = (id) => {
     url: `/api/answers/${id}`,
   });
 };
+
 
 export const addComment = (comment) => {
   return $.ajax({

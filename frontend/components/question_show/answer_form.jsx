@@ -13,7 +13,9 @@ class AnswerForm extends React.Component {
   answerQuestion(e){
     e.preventDefault();
     const answer = this.state;
-    this.props.createAnswer(answer).then(this.props.toggleAnswerForm);
+    this.props.createAnswer(answer)
+      .then(this.props.updateQuestion(this.props.question.id))
+      .then(this.props.toggleAnswerForm);
   }
 
   updateContent(e){

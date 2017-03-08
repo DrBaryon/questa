@@ -24,15 +24,22 @@ class Answer extends React.Component {
     let comments = [];
     if (this.props.answer.comments){
       comments = this.props.answer.comments.map(comment =>
-        <Comment key={comment.id} comment={comment}/>);
+        <Comment key={comment.id} comment={comment}
+          question={this.props.question}
+          createComment={this.props.createComment}
+          updateQuestion={this.props.updateQuestion}
+          commentableType={"Answer"}
+          commentableId={this.props.answer.id}
+          currentUser={this.props.currentUser}/>);
     }
     let answerComments = "";
     if (this.state.showComments){
       answerComments =
       <div className = "answer-comments">
         <CommentForm
+          question={this.props.question}
           createComment={this.props.createComment}
-          answer={this.props.answer}
+          updateQuestion={this.props.updateQuestion}
           commentableType={"Answer"}
           commentableId={this.props.answer.id}
           currentUser={this.props.currentUser}
