@@ -14,7 +14,6 @@ class QuestionShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchQuestion(this.props.params.id);
-    this.props.fetchAllAnswers;
   }
 
   componentWillReceiveProps(nextProps) {

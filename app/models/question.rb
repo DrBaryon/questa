@@ -7,4 +7,8 @@ class Question < ActiveRecord::Base
   has_many :tags, foreign_key: :question_id
   has_many :topics, through: :tags, source: :topic
 
+  def bestAnswer
+    return self.answers[0];
+  end
+
 end

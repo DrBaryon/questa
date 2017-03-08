@@ -4,23 +4,24 @@ class QuestionIndexItem extends React.Component {
 
   render(){
     // const tag = Object.keys(this.props.question.topics)[0];
-    let bestAnswer = {author: {avatar_url: "", first_name: "", last_name: ""}};
-    if (!!this.props.question.answers[0]){
-      bestAnswer = this.props.question.answers[0];
-    }
+    // let bestAnswer = {author: {avatar_url: "", first_name: "", last_name: ""}};
+    // if (!!this.props.question.answers[0]){
+    //   bestAnswer = this.props.question.answers[0];
+    // }
+    const question = this.props.question;
     return(
       <li className="question">
         <div className="question-header">
-          <a href={"/#/" + this.props.question.id}>{this.props.question.title}</a>
+          <a href={"/#/" + question.id}>{question.title}</a>
         </div>
         <div className="best-answer">
           <div className="best-answer-header">
-            <img src={bestAnswer.author.avatar_url} width="40" height="40"/>
-            {bestAnswer.author.first_name + " " +
-            bestAnswer.author.last_name}
+            <img src={question.bestAnswer.author.avatar_url} width="40" height="40"/>
+            {question.bestAnswer.author.first_name + " " +
+            question.bestAnswer.author.last_name}
           </div>
           <div className="best-answer-content">
-            {bestAnswer.content}
+            {question.bestAnswer.content}
           </div>
           <div className = "best-answer-footer">
             <a>Comment</a>
