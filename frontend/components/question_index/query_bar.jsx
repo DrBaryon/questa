@@ -5,7 +5,7 @@ class QueryBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {title: "", description: "", showDescription: false,
-      expanded: false};
+      expanded: false, displayedQuestions: []};
     this.askQuestion = this.askQuestion.bind(this);
     this.searchQuestions = this.searchQuestions.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
@@ -36,13 +36,13 @@ class QueryBar extends React.Component {
 
   searchQuestions(e){
     e.preventDefault();
-    this.update("title");
-    const searchTerm = this.state.title;
-    const questions = this.props.questions;
+    this.update("title")(e);
+    let searchTerm = this.state.title;
+    const displayedQuestions = this.props.questions.filter((question) => {
+      return question.title.includes(searchTerm);
+    });
     this.setState({
-      displayedQuestions: questions.filter( (question) => {
-        question.title.includes(searchTerm);
-      })
+      displayedQuestions: displayedQuestions
     });
   }
 
@@ -75,6 +75,11 @@ class QueryBar extends React.Component {
     this.props.router.push("/");
   }
 
+  goHome(e){
+    e.preventDefault();
+    this.props.router.push("/" + `${question.id}`);
+  }
+
   handleLogout(e){
     e.preventDefault();
     this.props.logout().then(this.redirectIfLoggedOut);
@@ -99,13 +104,19 @@ class QueryBar extends React.Component {
               <div className="expanded-ask-bar">
                 <textarea rows="1" onChange={this.searchQuestions} />
                 {descriptionField}
+                <ul className="search-results">
+                  {this.state.displayedQuestions.map((question) =>
+                    <li onClick={this.goToQuestion}>{question.title}</li>
+                  )}
+                </ul>
               </div>
               <div className="expanded-tool-bar">
                 <input type="submit" value="Just Do It!"/>
                 <button type="button" onClick={this.toggleDescriptionField}>Add Description</button>
               </div>
           </form>
-          <div>{thi.state.displayedQuestions}</div>
+
+
           <div className="grey-modal" onClick={this.toggleExpand} />
         </div>
 
