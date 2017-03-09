@@ -13,7 +13,7 @@ class QuestionIndex extends React.Component {
   }
 
   render(){
-    
+
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));
@@ -24,7 +24,8 @@ class QuestionIndex extends React.Component {
       <div className="homepage">
         <div className="header">
           <QueryBar createQuestion={this.props.createQuestion}
-            logout={this.props.logout}/>
+            logout={this.props.logout}
+            questions={this.props.questions}/>
         </div>
         <div className="main">
           <div className="left-sidebar-container">

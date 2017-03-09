@@ -1,15 +1,12 @@
-import {
-  RECEIVE_CURRENT_USER,
-  LOGOUT,
-  RECEIVE_ERRORS } from '../actions/session_actions';
+import { RECEIVE_CURRENT_TOPIC, RECEIVE_CURRENT_SEARCH_TERM } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const _nullUser = Object.freeze({
-  currentUser: null,
+  currentSearchTerm: null,
   errors: []
 });
 
-const SessionReducer = (state = _nullUser, action) => {
+const FiltersReducer = (state = {currentUser: null, errors: []}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:

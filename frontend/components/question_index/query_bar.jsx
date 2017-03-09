@@ -7,6 +7,7 @@ class QueryBar extends React.Component {
     this.state = {title: "", description: "", showDescription: false,
       expanded: false};
     this.askQuestion = this.askQuestion.bind(this);
+    this.searchQuestions = this.searchQuestions.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
     this.goHome = this.goHome.bind(this);
@@ -30,6 +31,18 @@ class QueryBar extends React.Component {
     const question = this.state;
     this.props.createQuestion(question).then(action => {
       this.props.router.push(`/${action.question.id}`);
+    });
+  }
+
+  searchQuestions(e){
+    e.preventDefault();
+    this.update("title");
+    const searchTerm = this.state.title;
+    const questions = this.props.questions;
+    this.setState({
+      displayedQuestions: questions.filter( (question) => {
+        question.title.includes(searchTerm);
+      })
     });
   }
 
@@ -84,7 +97,7 @@ class QueryBar extends React.Component {
           <form className = "expanded-query-bar" onSubmit={this.askQuestion} onClick={null}>
               <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
               <div className="expanded-ask-bar">
-                <textarea rows="1" onChange={this.update("title")} />
+                <textarea rows="1" onChange={this.searchQuestions} />
                 {descriptionField}
               </div>
               <div className="expanded-tool-bar">
@@ -92,6 +105,7 @@ class QueryBar extends React.Component {
                 <button type="button" onClick={this.toggleDescriptionField}>Add Description</button>
               </div>
           </form>
+          <div>{thi.state.displayedQuestions}</div>
           <div className="grey-modal" onClick={this.toggleExpand} />
         </div>
 

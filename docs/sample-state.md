@@ -31,4 +31,8 @@
       }
     }
   }
+  currentFilters: {
+    searchTerm: ""
+    currentTopic: "Psychology"
+  }
 }
