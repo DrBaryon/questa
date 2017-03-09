@@ -36,6 +36,11 @@ class QuestionIndex extends React.Component {
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
+                {currentUser.topics.map((topic) =>
+                  <li>
+                    <a href={"/#/topic/" + topic.id}>{topic.name}</a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :questions, :answers, :comments
-    resource :user, :session, :search
+    resource :user, :session, :topic
   end
 
   root to: "static_pages#root"

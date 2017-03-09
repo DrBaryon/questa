@@ -5,7 +5,8 @@ import QuestionIndex from './question_index';
 
 const mapStateToProps = (state) => ({
   questions: Object.keys(state.questions).map(key => state.questions[key]),
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser,
+  selectedTopic: state.session.selectedTopic
 });
 
 const mapDispatchToProps = (dispatch) => {

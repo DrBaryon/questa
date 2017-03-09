@@ -22,6 +22,10 @@ user3 = User.create(email: "memetichazard@gmail.com", password: "dankmemes", fir
 user4 = User.create(email: "lumberjack@gmail.com", password: "chopchop", first_name: "Unlucky", last_name: "Lumberjack", avatar_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Felling_axe.jpg/800px-Felling_axe.jpg")
 user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", first_name: "Chad", last_name: "Bergman", avatar_url: "https://www.facebook.com/photo.php?fbid=10203082254815554&l=c099019ef4")
 
+topic1 = Topic.create(name: "Animal Attacks")
+
+follow1 = Follow.create(user: user5, topic: topic1)
+
 
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
   and you both become immortal, however you die if the snail touches you.

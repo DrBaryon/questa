@@ -33,6 +33,7 @@ const Root = ({store}) => {
           <IndexRoute component={QuestionIndexContainer} onEnter={_ensureLoggedIn} />
           <Route path="/login" component={AuthFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/:id" component={QuestionShowContainer} onEnter={_ensureLoggedIn} />
+          <Route path="topic/:id" component={QuestionIndexContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>
