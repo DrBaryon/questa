@@ -11,6 +11,7 @@ class QueryBar extends React.Component {
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
     this.goHome = this.goHome.bind(this);
+    // this.goToQuestion = this.goToQuestion.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
@@ -75,10 +76,9 @@ class QueryBar extends React.Component {
     this.props.router.push("/");
   }
 
-  goHome(e){
-    e.preventDefault();
-    this.props.router.push("/" + `${question.id}`);
-  }
+  // goToQuestion(question){
+  //   this.props.router.push("/" + `${question.id}`);
+  // }
 
   handleLogout(e){
     e.preventDefault();
@@ -106,7 +106,9 @@ class QueryBar extends React.Component {
                 {descriptionField}
                 <ul className="search-results">
                   {this.state.displayedQuestions.map((question) =>
-                    <li onClick={this.goToQuestion}>{question.title}</li>
+                    <li key={question.id}>
+                      <a href={"/#/" + question.id}>{question.title}</a>
+                    </li>
                   )}
                 </ul>
               </div>
