@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchQuestion, createQuestion, createAnswer, createComment} from '../../actions/question_actions';
+import { fetchQuestion, createQuestion} from '../../actions/question_actions';
+import { createAnswer } from '../../actions/answer_actions';
+import { createComment} from '../../actions/comment_actions';
 import {logout} from '../../actions/session_actions';
 import QuestionShow from './question_show';
 

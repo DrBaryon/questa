@@ -4,8 +4,10 @@
     json.author do
       json.extract! question.author, :first_name, :last_name, :id, :avatar_url
     end
-    json.bestAnswer do
-      json.partial! "api/answers/answer", answer: question.bestAnswer
+    if question.bestAnswer
+      json.bestAnswer do
+        json.partial! "api/answers/answer", answer: question.bestAnswer
+      end
     end
   end
 end

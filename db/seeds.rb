@@ -10,11 +10,9 @@ User.destroy_all
 Question.destroy_all
 Answer.destroy_all
 Comment.destroy_all
-
-User.destroy_all
-Question.destroy_all
-Answer.destroy_all
-Comment.destroy_all
+Follow.destroy_all
+Tag.destroy_all
+Topic.destroy_all
 
 user1 = User.create(email: "guest", password: "guestlog", first_name: "Anonymous", last_name: "Guest")
 user2 = User.create(email: "snailirl@gmail.com", password: "snailirl", first_name: "Hugh", last_name: "Mannotsnail", avatar_url: "https://upload.wikimedia.org/wikipedia/commons/6/69/Grapevinesnail_01.jpg")

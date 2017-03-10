@@ -13,7 +13,7 @@ class QuestionIndex extends React.Component {
   }
 
   render(){
-
+    debugger
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));

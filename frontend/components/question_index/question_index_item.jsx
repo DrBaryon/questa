@@ -14,11 +14,17 @@ class QuestionIndexItem extends React.Component {
         <div className="question-header">
           <a href={"/#/" + question.id}>{question.title}</a>
         </div>
+        { question.bestAnswer &&
         <div className="best-answer">
           <div className="best-answer-header">
-            <img src={question.bestAnswer.author.avatar_url} width="40" height="40"/>
-            {question.bestAnswer.author.first_name + " " +
-            question.bestAnswer.author.last_name}
+            {
+              <img src={question.bestAnswer.author.avatar_url} width="40" height="40"/>
+            }
+            {
+              question.bestAnswer.author.first_name + " " +
+              question.bestAnswer.author.last_name
+            }
+
           </div>
           <div className="best-answer-content">
             {question.bestAnswer.content}
@@ -27,7 +33,7 @@ class QuestionIndexItem extends React.Component {
             <a>Comment</a>
           </div>
         </div>
-
+      }
       </li>
     );
   }

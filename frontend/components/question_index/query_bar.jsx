@@ -11,15 +11,9 @@ class QueryBar extends React.Component {
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
     this.goHome = this.goHome.bind(this);
-    // this.goToQuestion = this.goToQuestion.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
-
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   if (e.currentTarget.className === )
-  // }
 
   componentDidMount(){
     this.setState({
@@ -75,10 +69,6 @@ class QueryBar extends React.Component {
     e.preventDefault();
     this.props.router.push("/");
   }
-
-  // goToQuestion(question){
-  //   this.props.router.push("/" + `${question.id}`);
-  // }
 
   handleLogout(e){
     e.preventDefault();
