@@ -26,7 +26,6 @@ topic1 = Topic.create(name: "Animal Attacks")
 
 follow1 = Follow.create(user: user5, topic: topic1)
 
-
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
   and you both become immortal, however you die if the snail touches you.
   It always knows where you are and slowly crawls toward you. WHat's your plan?",
@@ -100,3 +99,6 @@ answer4 = Answer.create(question_id: question4.id, author_id: user2.id,
   In practice, the longest horizontal distance you could travel on a bike with an ideal ramp is probably not more than a couple hundred miles, and that would require ideal conditions. In the real world, the longest such trip might[8] be the Haleakala downhill bike ride, which allows you to take a 35-mile trip from near the 10,000-foot summit all the way down to sea level with virtually no pedaling required.
   If you aim for the right spot along the coast, you can probably get quite a few feet BELOW sea level without pedaling, although swimming back up with the bike might be hard.
   (And if you can't make it to Maui yourself, you can at least enjoy the video search results for bicycle into water.)")
+
+  tag1 = Tag.create(question: question1, topic: topic1)
+  tag2 = Tag.create(question: question2, topic: topic1)

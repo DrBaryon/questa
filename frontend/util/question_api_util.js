@@ -27,27 +27,3 @@ export const deleteQuestion = (id) => {
     url: `/api/questions/${id}`
   });
 };
-
-export const createAnswer = (answer) => {
-  return $.ajax({
-    type: 'POST',
-    url: `/api/answers`,
-    data: {answer}
-  });
-};
-
-export const fetchAnswer = (id) => {
-  return $.ajax({
-    type: 'GET',
-    url: `/api/answers/${id}`,
-  });
-};
-
-
-export const addComment = (comment) => {
-  return $.ajax({
-    type: 'POST',
-    url: `/api/comments`,
-    data: {comment}
-  });
-};

@@ -17,16 +17,11 @@ class QuestionIndex extends React.Component {
     const questionIndexItems = this.props.questions.map(question => (
       <QuestionIndexItem key={question.id} question={question} />
     ));
-    // const followedTopics = this.props.currentUser.followedTopics.map(topic => (
-    //   <li>{topic.name}</li>
-    // ));
     return (
       <div className="homepage">
-        <div className="header">
-          <QueryBar createQuestion={this.props.createQuestion}
-            logout={this.props.logout}
-            questions={this.props.questions}/>
-        </div>
+        <QueryBar createQuestion={this.props.createQuestion}
+          logout={this.props.logout}
+          questions={this.props.questions}/>
         <div className="main">
           <div className="left-sidebar-container">
             <div className="left-sidebar">
@@ -36,9 +31,9 @@ class QuestionIndex extends React.Component {
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
-                {currentUser.topics.map((topic) =>
+                {this.props.currentUser.topics.map((topic) =>
                   <li>
-                    <a href={"/#/topic/" + topic.id}>{topic.name}</a>
+                    <Link to={`/topic/${topic.id}`}>{topic.name}</Link>
                   </li>
                 )}
               </ul>

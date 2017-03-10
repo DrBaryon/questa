@@ -50,9 +50,7 @@ class QuestionShow extends React.Component {
 
       <div className="question-page">
         {this.state.showAnswerForm && answerform}
-        <div className="header">
-          <QueryBar createQuestion={this.props.createQuestion} logout={this.props.logout}/>
-        </div>
+        <QueryBar createQuestion={this.props.createQuestion} logout={this.props.logout}/>
         <div className="main">
           <div className="main-content">
             <div className="question-info-header">
