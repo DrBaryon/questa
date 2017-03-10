@@ -7,7 +7,8 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {content: "",
       commentable_id: this.props.commentableId,
-      commentable_type: this.props.commentableType};
+      commentable_type: this.props.commentableType,
+      expanded: false};
     this.updateContent = this.updateContent.bind(this);
     this.addComment = this.addComment.bind(this);
   }
@@ -15,8 +16,7 @@ class CommentForm extends React.Component {
   addComment(e){
     e.preventDefault();
     const comment = this.state;
-    this.props.createComment(comment)
-    .then(this.props.updateQuestion(this.props.question.id));
+    this.props.createComment(comment);
   }
 
   updateContent(e){
@@ -25,14 +25,19 @@ class CommentForm extends React.Component {
     });
   }
 
+  toggleExpand(){
+    this.setState({
+      expanded: !this.state.expanded
+    });
+  }
+
 
 
   render(){
     return(
       <form className = "comment-form" onSubmit={this.addComment}>
-        <img src={this.props.currentUser.avatar_url} width="25" height="25"/>
         <textarea rows="1" width="432" onChange={this.updateContent} />
-        <input type="submit" value = "Comment"/>
+        <input type="submit" value = "Reply"/>
       </form>
     );
   }

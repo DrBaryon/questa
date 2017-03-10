@@ -40,13 +40,54 @@ export const createQuestion = (question) => dispatch => (
     .then(newQuestion => dispatch(receiveQuestion(newQuestion)))
 );
 
-export const updateQuestion = (id) => dispatch => (
-  APIUtil.updateQuestion(id)
-    .then(updatedQuestion => dispatch(receiveQuestion(updatedQuestion)))
+export const updateQuestion = (question) => dispatch => (
+  APIUtil.updateQuestion(question)
+    .then(updatedQuestion => {
+      dispatch(receiveQuestion(updatedQuestion));
+    })
 );
 
 
 export const deleteQuestion = (id) => dispatch => (
   APIUtil.deleteQuestion(id)
     .then(question => dispatch(removeQuestion(question)))
+);
+
+/////////////////Answers//////////////////
+
+export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
+
+export const receiveAnswer = (answer) => {
+  return {
+    type: RECEIVE_ANSWER,
+    answer
+  };
+};
+
+export const createAnswer = (answer) => dispatch => (
+  APIUtil.createAnswer(answer)
+    .then(newAnswer => {
+      dispatch(receiveAnswer(newAnswer));
+    })
+);
+
+export const updateAnswer = (answer) => dispatch => (
+  APIUtil.updateAnswer(answer)
+    .then(updatedAnswer => dispatch(receiveAnswer(newAnswer)))
+);
+
+/////////////////Comments//////////////////
+
+export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+
+export const receiveComment = (comment) => {
+  return {
+    type: RECEIVE_COMMENT,
+    comment
+  };
+};
+
+export const createComment = (comment) => dispatch => (
+  APIUtil.addComment(comment)
+    .then( newComment => dispatch(receiveComment(newComment)))
 );

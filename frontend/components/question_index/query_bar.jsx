@@ -31,7 +31,8 @@ class QueryBar extends React.Component {
 
   searchQuestions(e){
     e.preventDefault();
-    this.update("title")(e);
+    this.update("title");
+    debugger
     let searchTerm = this.state.title;
     const displayedQuestions = this.props.questions.filter((question) => {
       return question.title.includes(searchTerm);
@@ -48,9 +49,16 @@ class QueryBar extends React.Component {
 	}
 
   update(field) {
-		return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+		return e => {
+      this.setState({[field]: e.currentTarget.value});
+      let searchTerm = this.state.title;
+      const displayedQuestions = this.props.questions.filter((question) => {
+        return question.title.includes(searchTerm);
+      });
+      this.setState({
+        displayedQuestions: displayedQuestions
+      });
+    };
 	}
 
   toggleExpand(){
@@ -92,7 +100,7 @@ class QueryBar extends React.Component {
           <form className = "expanded-query-bar" onSubmit={this.askQuestion} onClick={null}>
               <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
               <div className="expanded-ask-bar">
-                <textarea rows="1" onChange={this.searchQuestions} />
+                <textarea rows="1" onChange={this.update("title")} />
                 {descriptionField}
                 <ul className="search-results">
                   {this.state.displayedQuestions.map((question) =>

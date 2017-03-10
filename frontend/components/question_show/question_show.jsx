@@ -54,6 +54,15 @@ class QuestionShow extends React.Component {
         <div className="main">
           <div className="main-content">
             <div className="question-info-header">
+
+              <div className="question-tags">
+                {this.props.question.topics &&
+                  this.props.question.topics.map((topic) =>
+                  <div className = "question-tag">
+                    <a href={`/#/topic/${topic.id}`}>{topic.name}</a>
+                  </div>)
+                }
+              </div>
               <h1>{this.props.question.title}</h1>
               <h2>{this.props.question.description}</h2>
               <div className="question-toolbar">

@@ -5,6 +5,7 @@ class Api::AnswersController < ApplicationController
 
   def create
     @answer = current_user.answers.create!(answer_params)
+    @answer.upvotes = 0;
     render "api/answers/show"
   end
 
@@ -14,6 +15,6 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:question_id, :content)
+    params.require(:answer).permit(:question_id, :content, :upvotes)
   end
 end

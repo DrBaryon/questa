@@ -12,10 +12,12 @@ class QuestionIndex extends React.Component {
     this.props.fetchAllQuestions();
   }
 
+
+
   render(){
-    debugger
     const questionIndexItems = this.props.questions.map(question => (
-      <QuestionIndexItem key={question.id} question={question} />
+      <QuestionIndexItem key={question.id} question={question}
+        updateQuestion={this.props.updateQuestion}/>
     ));
     return (
       <div className="homepage">

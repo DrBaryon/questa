@@ -2,16 +2,19 @@ import React from 'react';
 
 class QuestionIndexItem extends React.Component {
 
+  // upvote(question){
+  //   this.props.updateQuestion({id: question.id, upvotes: question.upvotes + 1});
+  // }
+
   render(){
-    // const tag = Object.keys(this.props.question.topics)[0];
-    // let bestAnswer = {author: {avatar_url: "", first_name: "", last_name: ""}};
-    // if (!!this.props.question.answers[0]){
-    //   bestAnswer = this.props.question.answers[0];
-    // }
     let question = this.props.question;
     return(
       <li className="question">
-        <div className="question-header">
+        <div className="question-topic">
+          {question.bestTopic &&
+            <a href={`/#/topic/${question.bestTopic.id}`}>{question.bestTopic.name}</a>}
+        </div>
+        <div className="question-title">
           <a href={"/#/" + question.id}>{question.title}</a>
         </div>
         { question.bestAnswer &&
@@ -30,7 +33,6 @@ class QuestionIndexItem extends React.Component {
             {question.bestAnswer.content}
           </div>
           <div className = "best-answer-footer">
-            <a>Comment</a>
           </div>
         </div>
       }
@@ -39,6 +41,6 @@ class QuestionIndexItem extends React.Component {
   }
 }
 
-// <h5>{tag}</h5>
+
 
 export default QuestionIndexItem;

@@ -11,4 +11,8 @@ class Question < ActiveRecord::Base
     return self.answers[0];
   end
 
+  def bestTopic
+    return self.topics[0];
+  end
+
 end
