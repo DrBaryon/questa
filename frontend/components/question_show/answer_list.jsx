@@ -8,21 +8,22 @@ class AnswerList extends React.Component {
   }
 
   render(){
-    let answers = this.props.question.answers.map(answer =>
-      <Answer key={answer.id}
-        question={this.props.question}
-        answer={answer}
-        currentUser={this.props.currentUser}
-        createComment={this.props.createComment}
-        updateQuestion={this.props.updateQuestion}
-        receiveAnswer={this.props.receiveAnswer}/>);
+    let answers = Object.keys(this.props.question.answers);
+    debugger
     return(
     <div>
       <div className="answers-list-header">
-          {parseInt(this.props.question.answers.length) + " Answers"}
+          {parseInt(answers.length) + " Answers"}
       </div>
       <div className="answers-list">
-        {answers}
+        {answers.map(key =>
+          <Answer key={key}
+            question={this.props.question}
+            answer={this.props.question.answers[key]}
+            currentUser={this.props.currentUser}
+            createComment={this.props.createComment}
+            updateQuestion={this.props.updateQuestion}
+            receiveAnswer={this.props.receiveAnswer}/>)}
       </div>
     </div>
     );

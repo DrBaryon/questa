@@ -2,10 +2,6 @@ import React from 'react';
 
 class QuestionIndexItem extends React.Component {
 
-  // upvote(question){
-  //   this.props.updateQuestion({id: question.id, upvotes: question.upvotes + 1});
-  // }
-
   render(){
     let question = this.props.question;
     return(

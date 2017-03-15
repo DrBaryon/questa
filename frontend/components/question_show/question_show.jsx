@@ -57,9 +57,9 @@ class QuestionShow extends React.Component {
 
               <div className="question-tags">
                 {this.props.question.topics &&
-                  this.props.question.topics.map((topic) =>
+                  Object.keys(this.props.question.topics).map((key) =>
                   <div className = "question-tag">
-                    <a href={`/#/topic/${topic.id}`}>{topic.name}</a>
+                    <a href={`/#/topic/${key}`}>{this.props.question.topics[key].name}</a>
                   </div>)
                 }
               </div>
@@ -100,10 +100,3 @@ class QuestionShow extends React.Component {
 }
 
 export default QuestionShow;
-
-// let answers = "";
-// if (!!question.answers){
-//   answers = question.answers.map(answer => (
-//     <Answer key={question.id} answer={answer} />
-//   ));
-// }

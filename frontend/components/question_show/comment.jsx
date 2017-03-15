@@ -52,9 +52,9 @@ class Comment extends React.Component {
           }
           <div className="comment-list">
             {this.props.comment.comments &&
-              this.props.comment.comments.map(comment =>
+              Object.keys(this.props.comment.comments).map(key =>
                 <div>
-                  <Comment key={comment.id} comment={comment}/>
+                  <Comment key={key} comment={this.props.comment.comments[key]}/>
                 </div>)}
           </div>
         </div>
