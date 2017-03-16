@@ -9,6 +9,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
+    debugger
     @answer = current_user.answers.find(params[:id])
     @answer.delete
   end
@@ -16,6 +17,6 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:question_id, :content, :upvotes)
+    params.require(:answer).permit(:question_id, :content)
   end
 end
