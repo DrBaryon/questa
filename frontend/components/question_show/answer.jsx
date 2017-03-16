@@ -55,6 +55,7 @@ class Answer extends React.Component {
                 <Comment key={key} comment={this.props.answer.comments[key]}
                   question={this.props.question}
                   createComment={this.props.createComment}
+                  deleteComment={this.props.deleteComment}
                   commentableType={"Answer"}
                   commentableId={this.props.answer.id}
                   currentUser={this.props.currentUser}/>)}

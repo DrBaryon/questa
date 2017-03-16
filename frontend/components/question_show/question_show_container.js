@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     createQuestion: question => dispatch(createQuestion(question)),
     deleteQuestion: id => dispatch(deleteQuestion(id)),
     deleteAnswer: id => dispatch(deleteAnswer(id)),
+    deleteComent: id => dispatch(deleteComment(id)),
     createAnswer: answer => dispatch(createAnswer(answer)),
     createComment: comment => dispatch(createComment(comment)),
     logout: () => dispatch(logout())
