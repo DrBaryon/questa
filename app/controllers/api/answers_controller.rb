@@ -9,9 +9,9 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
-    debugger
     @answer = current_user.answers.find(params[:id])
-    @answer.delete
+    @answer.destroy
+    redirect_to "/#/#{@answer.question_id}"
   end
 
   private
