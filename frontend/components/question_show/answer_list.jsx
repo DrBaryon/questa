@@ -21,6 +21,8 @@ class AnswerList extends React.Component {
            answer={this.props.question.answers[key]}
            currentUser={this.props.currentUser}
            createComment={this.props.createComment}
+           deleteAnswer={this.props.deleteAnswer}
+           deleteComment={this.props.createComment}
            receiveAnswer={this.props.receiveAnswer}/>)}
      </div>
    </div>

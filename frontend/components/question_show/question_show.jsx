@@ -83,6 +83,8 @@ class QuestionShow extends React.Component {
               currentUser={this.props.currentUser}
               createAnswer={this.props.createAnswer}
               createComment={this.props.createComment}
+              deleteAnswer={this.props.deleteAnswer}
+              deleteComment={this.props.deleteComment}
               toggleAnswerForm={this.toggleAnswerForm}/>
             }
           </div>

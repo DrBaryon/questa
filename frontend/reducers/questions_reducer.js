@@ -17,7 +17,7 @@ const QuestionReducer = (state = {}, action) => {
       newState[answer.question_id].answers[answer.id] = answer;
       return newState;
     case REMOVE_ANSWER:
-      delete newState[action.answer.question.id].answers[action.answer.id];
+      delete newState[action.answer.question_id].answers[action.answer.id];
       return newState;
     case RECEIVE_COMMENT:
       let comment = action.comment;
