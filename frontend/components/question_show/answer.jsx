@@ -38,7 +38,6 @@ class Answer extends React.Component {
         </div>
         <div className = "answer-footer">
           <a onClick={this.toggleComments}>Toggle Comments</a>
-          // <a onClick={this.deleteAnswer}>Delete</a>
         </div>
         {this.state.showComments &&
           <div className = "answer-comments">
