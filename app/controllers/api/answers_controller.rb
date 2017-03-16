@@ -10,6 +10,9 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
+    @answer = current_user.answers.find(params[:id])
+    @answer.delete
+    render "api/answers/show"
   end
 
   private
