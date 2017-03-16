@@ -12,7 +12,7 @@ class Api::QuestionsController < ApplicationController
 
   def destroy
     @question = current_user.questions.find(params[:id])
-    @question.delete
+    @question.destroy
     redirect_to "/#/"
   end
 
