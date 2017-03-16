@@ -53,6 +53,13 @@ export const fetchAnswer = (id) => {
   });
 };
 
+export const deleteAnswer = (id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/answers/${id}`
+  });
+};
+
 ///////////////Comments///////////////
 
 export const addComment = (comment) => {
@@ -60,5 +67,12 @@ export const addComment = (comment) => {
     type: 'POST',
     url: `/api/comments`,
     data: {comment}
+  });
+};
+
+export const deleteComment = (id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/comments/${id}`
   });
 };
