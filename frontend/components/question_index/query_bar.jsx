@@ -119,7 +119,6 @@ class QueryBar extends React.Component {
        <form className = "query-bar" onSubmit={this.askQuestion}>
          <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
          <div className="ask-bar" onClick={this.toggleExpand}>
-          <textarea rows="1" onChange={this.update("title")} />
           <textarea rows="1" />
            <input type="submit" value = "Ask Question"/>
          </div>
