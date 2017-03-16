@@ -31,4 +31,5 @@
       }
     }
   }
+  currentTopic: "Psychology"
 }

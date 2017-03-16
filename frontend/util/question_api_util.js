@@ -20,12 +20,14 @@ export const createQuestion = (question) => {
   });
 };
 
-export const updateQuestion = (id) => {
+export const updateQuestion = (question) => {
   return $.ajax({
     type: 'PATCH',
-    url: `/api/questions/${id}`
+    url: `/api/questions/${question.id}`,
+    data: {question}
   });
 };
+
 
 export const deleteQuestion = (id) => {
   return $.ajax({
@@ -33,6 +35,8 @@ export const deleteQuestion = (id) => {
     url: `/api/questions/${id}`
   });
 };
+
+///////////////Answers//////////////
 
 export const createAnswer = (answer) => {
   return $.ajax({
@@ -48,6 +52,8 @@ export const fetchAnswer = (id) => {
     url: `/api/answers/${id}`,
   });
 };
+
+///////////////Comments///////////////
 
 export const addComment = (comment) => {
   return $.ajax({

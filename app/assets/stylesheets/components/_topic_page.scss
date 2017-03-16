@@ -1,0 +1,80 @@
+.topic-header {
+  display: inline-block;
+  margin-top: 53px;
+  margin-left: 96px;
+  padding: 24px 0px;
+  height: 80px;
+  font-weight: bold;
+  line-height: 80px;
+  color: #262626;
+  font-size: 26px;
+  font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+}
+
+.topic-nav-bar {
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  word-wrap: break-word;
+  color: #333;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.4;
+  height: 44px;
+}
+
+.topic-page .main {
+  width: 1002px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.main-content {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+  width: 602px;
+}
+
+.right-sidebar {
+  width: 314px;
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+  margin-left: 86px;
+  font-size: 13px;
+}
+
+.right-sidebar h3 {
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.topic-stats {
+  display: table;
+  margin-bottom: 40px;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.topic-table-cell {
+  border-right: 1px solid #e2e2e2;
+  display: table-cell;
+  width: 33%;
+  padding: 12px;
+  height: 38px;
+}
+
+.topic-table-cell:last-child {
+  border-right: 0px;
+}
