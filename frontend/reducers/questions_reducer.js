@@ -10,7 +10,6 @@ const QuestionReducer = (state = {}, action) => {
     case RECEIVE_ALL_QUESTIONS:
       return action.questions;
     case REMOVE_QUESTION:
-      debugger
       delete newState[action.question.id];
       return newState;
     case RECEIVE_ANSWER:
