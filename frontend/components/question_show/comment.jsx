@@ -44,7 +44,6 @@ class Comment extends React.Component {
             <CommentForm
               question={this.props.question}
               createComment={this.props.createComment}
-              updateQuestion={this.props.updateQuestion}
               commentableType={"Comment"}
               commentableId={this.props.comment.id}
               currentUser={this.props.currentUser}

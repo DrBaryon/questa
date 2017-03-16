@@ -37,7 +37,7 @@ class Answer extends React.Component {
           {this.props.answer.content}
         </div>
         <div className = "answer-footer">
-          <a onClick={this.toggleComments}>View Comments</a>
+          <a onClick={this.toggleComments}>Toggle Comments</a>
           <a onClick={this.deleteAnswer}>Delete</a>
         </div>
         {this.state.showComments &&
@@ -45,7 +45,6 @@ class Answer extends React.Component {
           <CommentForm
             question={this.props.question}
             createComment={this.props.createComment}
-            updateQuestion={this.props.updateQuestion}
             commentableType={"Answer"}
             commentableId={this.props.answer.id}
             currentUser={this.props.currentUser}
@@ -56,7 +55,6 @@ class Answer extends React.Component {
                 <Comment key={key} comment={this.props.answer.comments[key]}
                   question={this.props.question}
                   createComment={this.props.createComment}
-                  updateQuestion={this.props.updateQuestion}
                   commentableType={"Answer"}
                   commentableId={this.props.answer.id}
                   currentUser={this.props.currentUser}/>)}
