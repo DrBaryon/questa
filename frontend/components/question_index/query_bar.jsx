@@ -5,19 +5,15 @@ class QueryBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {title: "", description: "", showDescription: false,
-      expanded: false};
+      expanded: false, displayedQuestions: []};
     this.askQuestion = this.askQuestion.bind(this);
+    this.filterQuestions = this.filterQuestions.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
     this.goHome = this.goHome.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
-
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   if (e.currentTarget.className === )
-  // }
 
   componentDidMount(){
     this.setState({
@@ -33,6 +29,16 @@ class QueryBar extends React.Component {
     });
   }
 
+  filterQuestions(){
+    let searchTerm = this.state.title;
+    let displayedQuestions = this.props.questions.filter((question) => {
+      return question.title.includes(searchTerm);
+    });
+    this.setState({
+      displayedQuestions: displayedQuestions
+    });
+  }
+
   clear(field) {
 		return e => this.setState({
       [field]: ""
@@ -40,9 +46,9 @@ class QueryBar extends React.Component {
 	}
 
   update(field) {
-		return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+		return e => {
+      this.setState({[field]: e.currentTarget.value}, this.filterQuestions);
+    };
 	}
 
   toggleExpand(){
@@ -86,12 +92,21 @@ class QueryBar extends React.Component {
               <div className="expanded-ask-bar">
                 <textarea rows="1" onChange={this.update("title")} />
                 {descriptionField}
+                <ul className="search-results">
+                  {this.state.displayedQuestions.map((question) =>
+                    <li key={question.id}>
+                      <a href={"/#/" + question.id}>{question.title}</a>
+                    </li>
+                  )}
+                </ul>
               </div>
               <div className="expanded-tool-bar">
                 <input type="submit" value="Just Do It!"/>
                 <button type="button" onClick={this.toggleDescriptionField}>Add Description</button>
               </div>
           </form>
+
+
           <div className="grey-modal" onClick={this.toggleExpand} />
         </div>
 
@@ -101,7 +116,7 @@ class QueryBar extends React.Component {
       <form className = "query-bar" onSubmit={this.askQuestion}>
         <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
         <div className="ask-bar" onClick={this.toggleExpand}>
-          <textarea rows="1" onChange={this.update("title")} />
+          <textarea rows="1" />
           <input type="submit" value = "Ask Question"/>
         </div>
         <div className="nav-bar">

@@ -1,5 +1,7 @@
 .expanded-query-bar-container{
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: 9000;
@@ -76,6 +78,39 @@
   width: 101px;
   height: 18px;
 }
+
+.search-results-header{
+  padding: 8px;
+  color: #999;
+  text-align: center;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e2e2e2;
+  cursor: default;
+  position: relative;
+}
+
+.search-results {
+  border: 0;
+  top: auto;
+  position: relative;
+  width: 100%;
+}
+
+.search-results li{
+  padding: 8px;
+  padding-right: 30px;
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 15px;
+  position: relative;
+  color: black;
+  cursor: pointer;
+}
+
+.search-results li:hover{
+  color: rgb(49, 109, 173);
+}
+
 
 .description-field{
   padding: 4px 8px 20px;

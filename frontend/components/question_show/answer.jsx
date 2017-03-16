@@ -27,27 +27,6 @@ class Answer extends React.Component {
     if (!this.props.answer){
       return (<h2>Loading</h2>);
     }
-    let comments = [];
-    if (this.props.answer.comments){
-      comments = this.props.answer.comments.map(comment =>
-        <Comment key={comment.id} comment={comment}/>);
-    }
-    let answerComments = "";
-    if (this.state.showComments){
-      answerComments =
-      <div className = "answer-comments">
-        <CommentForm
-          createComment={this.props.createComment}
-          answer={this.props.answer}
-          commentableType={"Answer"}
-          commentableId={this.props.answer.id}
-          currentUser={this.props.currentUser}
-          />
-        <ul className="comment-list">
-          {comments}
-        </ul>
-      </div>;
-    }
     return(
       <li className="answer">
         <div className = "answer-header">
@@ -61,7 +40,28 @@ class Answer extends React.Component {
           <a onClick={this.toggleComments}>View Comments</a>
           <a onClick={this.deleteAnswer}>Delete</a>
         </div>
-        {answerComments}
+        {this.state.showComments &&
+          <div className = "answer-comments">
+          <CommentForm
+            question={this.props.question}
+            createComment={this.props.createComment}
+            updateQuestion={this.props.updateQuestion}
+            commentableType={"Answer"}
+            commentableId={this.props.answer.id}
+            currentUser={this.props.currentUser}
+            />
+          <div className="comment-list">
+            {this.props.answer.comments &&
+              Object.keys(this.props.answer.comments).map(key =>
+                <Comment key={key} comment={this.props.answer.comments[key]}
+                  question={this.props.question}
+                  createComment={this.props.createComment}
+                  updateQuestion={this.props.updateQuestion}
+                  commentableType={"Answer"}
+                  commentableId={this.props.answer.id}
+                  currentUser={this.props.currentUser}/>)}
+          </div>
+        </div>}
       </li>
     );
   }
