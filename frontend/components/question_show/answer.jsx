@@ -21,7 +21,6 @@ class Answer extends React.Component {
     if (!this.props.answer){
       return (<h2>Loading</h2>);
     }
-    debugger
     return(
       <li className="answer">
         <div className = "answer-header">

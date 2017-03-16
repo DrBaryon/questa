@@ -7,7 +7,7 @@ class QueryBar extends React.Component {
     this.state = {title: "", description: "", showDescription: false,
       expanded: false, displayedQuestions: []};
     this.askQuestion = this.askQuestion.bind(this);
-    this.searchQuestions = this.searchQuestions.bind(this);
+    this.filterQuestions = this.filterQuestions.bind(this);
     this.toggleExpand = this.toggleExpand.bind(this);
     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
     this.goHome = this.goHome.bind(this);
@@ -29,12 +29,9 @@ class QueryBar extends React.Component {
     });
   }
 
-  searchQuestions(e){
-    e.preventDefault();
-    this.update("title");
-    debugger
+  filterQuestions(){
     let searchTerm = this.state.title;
-    const displayedQuestions = this.props.questions.filter((question) => {
+    let displayedQuestions = this.props.questions.filter((question) => {
       return question.title.includes(searchTerm);
     });
     this.setState({
@@ -50,14 +47,7 @@ class QueryBar extends React.Component {
 
   update(field) {
 		return e => {
-      this.setState({[field]: e.currentTarget.value});
-      let searchTerm = this.state.title;
-      const displayedQuestions = this.props.questions.filter((question) => {
-        return question.title.includes(searchTerm);
-      });
-      this.setState({
-        displayedQuestions: displayedQuestions
-      });
+      this.setState({[field]: e.currentTarget.value}, this.filterQuestions);
     };
 	}
 
@@ -126,7 +116,7 @@ class QueryBar extends React.Component {
       <form className = "query-bar" onSubmit={this.askQuestion}>
         <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
         <div className="ask-bar" onClick={this.toggleExpand}>
-          <textarea rows="1" onChange={this.update("title")} />
+          <textarea rows="1" />
           <input type="submit" value = "Ask Question"/>
         </div>
         <div className="nav-bar">

@@ -18,12 +18,9 @@ const QuestionReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_COMMENT:
       let comment = action.comment;
-      debugger
-      while (comment.commentable_type !== "ANSWER"){
-        comment.parent.comments[comment.id] = comment;
-        comment = comment.parent;
+      if (comment.commentable_type === "Answer"){
+        newState[comment.question_id].answers[comment.commentable_id].comments[comment.id] = comment;
       }
-      newState[answer.question_id].answers[comment.commentable_id].comments[comment.id] = comment;
       return newState;
     default:
       return state;
