@@ -93,7 +93,7 @@ export const deleteAnswer = (id) => dispatch => (
   APIUtil.deleteAnswer(id)
     .then(answer => dispatch(removeAnswer(answer)))
 );
-=======
+
 /////////////////Comments//////////////////
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
