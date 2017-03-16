@@ -5,7 +5,6 @@ class QueryBar extends React.Component {
    constructor(props){
      super(props);
      this.state = {title: "", description: "", showDescription: false,
-      expanded: false};
       expanded: false, displayedQuestions: []};
      this.askQuestion = this.askQuestion.bind(this);
     this.filterQuestions = this.filterQuestions.bind(this);
