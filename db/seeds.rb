@@ -10,11 +10,9 @@ User.destroy_all
 Question.destroy_all
 Answer.destroy_all
 Comment.destroy_all
-
-User.destroy_all
-Question.destroy_all
-Answer.destroy_all
-Comment.destroy_all
+Follow.destroy_all
+Tag.destroy_all
+Topic.destroy_all
 
 user1 = User.create(email: "guest", password: "guestlog", first_name: "Anonymous", last_name: "Guest")
 user2 = User.create(email: "snailirl@gmail.com", password: "snailirl", first_name: "Hugh", last_name: "Mannotsnail", avatar_url: "https://upload.wikimedia.org/wikipedia/commons/6/69/Grapevinesnail_01.jpg")
@@ -22,6 +20,9 @@ user3 = User.create(email: "memetichazard@gmail.com", password: "dankmemes", fir
 user4 = User.create(email: "lumberjack@gmail.com", password: "chopchop", first_name: "Unlucky", last_name: "Lumberjack", avatar_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Felling_axe.jpg/800px-Felling_axe.jpg")
 user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", first_name: "Chad", last_name: "Bergman", avatar_url: "https://www.facebook.com/photo.php?fbid=10203082254815554&l=c099019ef4")
 
+topic1 = Topic.create(name: "Animal Attacks")
+
+follow1 = Follow.create(user: user5, topic: topic1)
 
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
   and you both become immortal, however you die if the snail touches you.
@@ -96,3 +97,6 @@ answer4 = Answer.create(question_id: question4.id, author_id: user2.id,
   In practice, the longest horizontal distance you could travel on a bike with an ideal ramp is probably not more than a couple hundred miles, and that would require ideal conditions. In the real world, the longest such trip might[8] be the Haleakala downhill bike ride, which allows you to take a 35-mile trip from near the 10,000-foot summit all the way down to sea level with virtually no pedaling required.
   If you aim for the right spot along the coast, you can probably get quite a few feet BELOW sea level without pedaling, although swimming back up with the bike might be hard.
   (And if you can't make it to Maui yourself, you can at least enjoy the video search results for bicycle into water.)")
+
+  tag1 = Tag.create(question: question1, topic: topic1)
+  tag2 = Tag.create(question: question2, topic: topic1)

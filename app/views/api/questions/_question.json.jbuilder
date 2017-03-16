@@ -1,8 +1,4 @@
-json.extract! question, :id, :title, :description, :author
-
-json.answers question.answers do |answer|
-  json.extract! answer, :id, :author_id, :content, :author, :comments
-  json.comments answer.comments do |comment|
-    json.partial! "api/comments/comment", comment: comment
-  end
+json.extract! question, :id, :title, :description
+json.author do
+  json.extract! question.author, :first_name, :last_name, :id, :avatar_url
 end

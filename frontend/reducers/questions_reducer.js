@@ -13,18 +13,13 @@ const QuestionReducer = (state = {}, action) => {
       delete newState[action.question.id];
       return newState;
     case RECEIVE_ANSWER:
-      const answer = action.answer;
-      return merge({}, state, {[answer.question.id]: {["answers"]:
-        {[answer.id]: answer}}});
+      let answer = action.answer;
+      newState[answer.question_id].answers[answer.id] = answer;
+      return newState;
     case RECEIVE_COMMENT:
-      const comment = action.comment;
-      for (let id in newState) {
-        const question = newState[id];
-        question.answers.forEach((answer) => {
-          if (answer.id === comment.commentable.id){
-            answer.comments.push(comment);
-          }
-        });
+      let comment = action.comment;
+      if (comment.commentable_type === "Answer"){
+        newState[comment.question_id].answers[comment.commentable_id].comments[comment.id] = comment;
       }
       return newState;
     default:

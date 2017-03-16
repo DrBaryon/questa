@@ -7,6 +7,7 @@ import App from './app';
 import AuthFormContainer from './auth_form/auth_form_container';
 import QuestionIndexContainer from './question_index/question_index_container';
 import QuestionShowContainer from './question_show/question_show_container';
+import TopicShowContainer from './topic_show/topic_show_container';
 
 
 
@@ -33,6 +34,7 @@ const Root = ({store}) => {
           <IndexRoute component={QuestionIndexContainer} onEnter={_ensureLoggedIn} />
           <Route path="/login" component={AuthFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/:id" component={QuestionShowContainer} onEnter={_ensureLoggedIn} />
+          <Route path="topic/:id" component={TopicShowContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

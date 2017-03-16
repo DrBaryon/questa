@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
 import QueryBar from '../question_index/query_bar';
+import AnswerList from './answer_list';
 import Answer from './answer';
 import AnswerForm from './answer_form';
 
@@ -36,18 +37,7 @@ class QuestionShow extends React.Component {
     if (!this.props.question){
       return (<h2>Loading</h2>);
     }
-    let answers = [];
-
-    if (this.props.question.answers){
-      answers = this.props.question.answers.map(answer =>
-      <Answer key={answer.id} answer={answer}
-        currentUser={this.props.currentUser}
-        createComment={this.props.createComment}
-        receiveAnswer={this.props.receiveAnswer}/>);
-    }
-    let answerform = "";
-    if (this.state.showAnswerForm){
-      answerform =
+    let answerform =
       <div className="answer-form-container">
         <AnswerForm question={this.props.question}
           currentUser={this.props.currentUser}
@@ -56,29 +46,37 @@ class QuestionShow extends React.Component {
           toggleAnswerForm={this.toggleAnswerForm}/>
         <button className="close-form" type="button" onClick={this.toggleAnswerForm}>X</button>
       </div>;
-    }
     return (
 
       <div className="question-page">
-        {answerform}
-        <div className="header">
-          <QueryBar createQuestion={this.props.createQuestion} logout={this.props.logout}/>
-        </div>
+        {this.state.showAnswerForm && answerform}
+        <QueryBar createQuestion={this.props.createQuestion} logout={this.props.logout}/>
         <div className="main">
           <div className="main-content">
             <div className="question-info-header">
+
+              <div className="question-tags">
+                {this.props.question.topics &&
+                  Object.keys(this.props.question.topics).map((key) =>
+                  <div className = "question-tag">
+                    <a href={`/#/topic/${key}`}>{this.props.question.topics[key].name}</a>
+                  </div>)
+                }
+              </div>
               <h1>{this.props.question.title}</h1>
               <h2>{this.props.question.description}</h2>
               <div className="question-toolbar">
                 <button className="answer-button" type="button" onClick={this.toggleAnswerForm}>Answer</button>
               </div>
             </div>
-            <div className="answers-list-header">
-                {parseInt(answers.length) + " Answers"}
-            </div>
-            <ul className="answers-list">
-                {answers}
-            </ul>
+            { this.props.question.answers &&
+              <AnswerList question={this.props.question}
+              currentUser={this.props.currentUser}
+              createAnswer={this.props.createAnswer}
+              createComment={this.props.createComment}
+              updateQuestion={this.props.updateQuestion}
+              toggleAnswerForm={this.toggleAnswerForm}/>
+            }
           </div>
           <div className="right-sidebar-container">
             <div className="right-sidebar">
@@ -102,10 +100,3 @@ class QuestionShow extends React.Component {
 }
 
 export default QuestionShow;
-
-// let answers = "";
-// if (!!question.answers){
-//   answers = question.answers.map(answer => (
-//     <Answer key={question.id} answer={answer} />
-//   ));
-// }
