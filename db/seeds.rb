@@ -21,8 +21,10 @@ user4 = User.create(email: "lumberjack@gmail.com", password: "chopchop", first_n
 user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", first_name: "Chad", last_name: "Bergman", avatar_url: "https://www.facebook.com/photo.php?fbid=10203082254815554&l=c099019ef4")
 
 topic1 = Topic.create(name: "Animal Attacks")
+topic2 = Topic.create(name: "Best of the Quest(a)")
 
 follow1 = Follow.create(user: user5, topic: topic1)
+follow2 = Follow.create(user: user5, topic: topic2)
 
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
   and you both become immortal, however you die if the snail touches you.
@@ -100,3 +102,5 @@ answer4 = Answer.create(question_id: question4.id, author_id: user2.id,
 
   tag1 = Tag.create(question: question1, topic: topic1)
   tag2 = Tag.create(question: question2, topic: topic1)
+  tag3 = Tag.create(question: question1, topic: topic2)
+  tag4 = Tag.create(question: question4, topic: topic2)
