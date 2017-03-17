@@ -7,7 +7,7 @@ class QueryBar extends React.Component {
      this.state = {title: "", description: "", showDescription: false,
       expanded: false, displayedQuestions: []};
      this.askQuestion = this.askQuestion.bind(this);
-    this.filterQuestions = this.filterQuestions.bind(this);
+     this.filterQuestions = this.filterQuestions.bind(this);
      this.toggleExpand = this.toggleExpand.bind(this);
      this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
      this.goHome = this.goHome.bind(this);
@@ -46,9 +46,6 @@ class QueryBar extends React.Component {
    }
 
    update(field) {
-		return e => this.setState({
-      [field]: e.currentTarget.value
-    });
 		return e => {
       this.setState({[field]: e.currentTarget.value}, this.filterQuestions);
     };
