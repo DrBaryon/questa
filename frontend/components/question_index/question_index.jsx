@@ -33,7 +33,8 @@ class QuestionIndex extends React.Component {
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
-                {this.props.currentUser.topics.map((topic) =>
+                {this.props.currentUser &&
+                  this.props.currentUser.topics.map((topic) =>
                   <li>
                     <Link to={`/topic/${topic.id}`}>{topic.name}</Link>
                   </li>

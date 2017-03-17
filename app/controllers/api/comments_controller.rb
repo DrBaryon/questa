@@ -2,7 +2,6 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.create!(comment_params)
-    @comment.upvotes = 0;
     render "api/comments/show"
   end
 
