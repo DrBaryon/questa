@@ -56,13 +56,13 @@ class QuestionIndex extends React.Component {
                 <h2>Setup Your Account</h2>
               </div>
               <ul className="right-sidebar-tasklist">
-                <li><a>Visit your feed</a></li>
-                <li><a>Follow 10 more topics</a></li>
-                <li><a>Find your friends on Quora</a></li>
-                <li><a>Upvote 5 more good answers</a></li>
-                <li><a>Ask your first question</a></li>
-                <li><a>Add info about what you know</a></li>
-                <li><a>Answer a question</a></li>
+                <li>Visit your feed</li>
+                <li>Follow 10 more topics</li>
+                <li>Find your friends on Quora</li>
+                <li>Upvote 5 more good answers</li>
+                <li>Ask your first question</li>
+                <li>Add info about what you know</li>
+                <li>Answer a question</li>
               </ul>
             </div>
           </div>

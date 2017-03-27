@@ -120,9 +120,6 @@ class QueryBar extends React.Component {
            <input type="submit" value = "Ask Question"/>
          </div>
          <div className="nav-bar">
-          <button>Read</button>
-          <button>Answer</button>
-          <button>Notifications</button>
           <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
         </div>
       </form>
