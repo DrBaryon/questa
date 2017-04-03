@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import QuestionIndexItem from './question_index_item';
 import QueryBar from './query_bar';
+import TopicSearchBar from './topic_search_bar'
 
 class QuestionIndex extends React.Component {
   constructor(props){
@@ -37,6 +38,7 @@ class QuestionIndex extends React.Component {
                   {!this.state.showTopicSearch && "Edit"}
                   {this.state.showTopicSearch && "Done"}
                 </a>
+                {this.state.showTopicSearch && <TopicSearchBar fetchAllTopics={this.props.fetchAllTopics} />}
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
