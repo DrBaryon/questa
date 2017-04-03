@@ -5,9 +5,10 @@ export const fetchTopic = (id) => {
   });
 };
 
-export const fetchAllTopics = () => {
+export const fetchAllTopics = (searchTerm) => {
   return $.ajax({
     type: 'GET',
-    url: `/api/topics`
+    url: `/api/topics`,
+    data: {searchTerm: searchTerm}
   });
 };

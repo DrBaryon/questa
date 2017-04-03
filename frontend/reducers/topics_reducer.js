@@ -1,4 +1,4 @@
-import { RECEIVE_TOPIC } from '../actions/topic_actions';
+import { RECEIVE_TOPIC, RECEIVE_ALL_TOPICS } from '../actions/topic_actions';
 import merge from 'lodash/merge';
 
 const TopicReducer = (state = {}, action) => {

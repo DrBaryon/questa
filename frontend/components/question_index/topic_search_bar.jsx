@@ -4,14 +4,8 @@ class TopicSearchBar extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {topicName: "", displayedTopics: [], topics: []}
+    this.state = {topicName: ""}
     this.filterTopics = this.filterTopics.bind(this);
-  }
-
-  componentDidMount(){
-    this.setState({
-       topics: this.props.fetchAllTopics()
-    });
   }
 
   update(field) {
@@ -21,22 +15,17 @@ class TopicSearchBar extends React.Component {
   }
 
   filterTopics(){
-    debugger
-    let searchTerm = this.state.topicName;
-    let displayedTopics = this.state.topics.filter((topic) => {
-      return topic.name.includes(searchTerm);
-    });
-    this.setState({
-      displayedTopics: displayedTopics
-    });
+    this.props.fetchAllTopics(this.state.topicName);
   }
 
   render(){
+    debugger
     return (
-      <div>
+      <div className="topic-search-bar">
         <textarea rows="1" onChange={this.update("topicName")} />
         <ul className="search-results">
-          {this.state.displayedTopics.map((topic) =>
+          {this.props.currentUser.potentialTopics &&
+            this.props.currentUser.potentialTopics.map((topic) =>
             <li key={topic.id}>
               <a href={"/#/" + topic.id}>{topic.name}</a>
             </li>
