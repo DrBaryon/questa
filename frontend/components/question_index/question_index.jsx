@@ -6,13 +6,17 @@ import QueryBar from './query_bar';
 class QuestionIndex extends React.Component {
   constructor(props){
     super(props);
+    this.state = {showTopicSearch: false}
+    this.toggleTopicSearch = this.toggleTopicSearch.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchAllQuestions();
   }
 
-
+  toggleTopicSearch(){
+    this.setState({showTopicSearch: !this.state.showTopicSearch})
+  }
 
   render(){
     const questionIndexItems = this.props.questions.map(question => (
@@ -29,7 +33,10 @@ class QuestionIndex extends React.Component {
             <div className="left-sidebar">
               <div className="left-sidebar-header">
                 <h2>Feeds</h2>
-                <a>Edit</a>
+                <a onClick={this.toggleTopicSearch}>
+                  {!this.state.showTopicSearch && "Edit"}
+                  {this.state.showTopicSearch && "Done"}
+                </a>
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
