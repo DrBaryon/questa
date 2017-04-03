@@ -38,7 +38,7 @@ class QuestionIndex extends React.Component {
                   {!this.state.showTopicSearch && "Edit"}
                   {this.state.showTopicSearch && "Done"}
                 </a>
-                {this.state.showTopicSearch && <TopicSearchBar fetchAllTopics={this.props.fetchAllTopics} />}
+                {this.state.showTopicSearch && <TopicSearchBar currentUser={this.props.currentUser} fetchAllTopics={this.props.fetchAllTopics} />}
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>

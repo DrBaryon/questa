@@ -1,5 +1,7 @@
 import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS }
   from '../actions/session_actions';
+import { RECEIVE_ALL_TOPICS}
+  from '../actions/topic_actions'
 
 import merge from 'lodash/merge';
 
@@ -21,6 +23,10 @@ const SessionReducer = (state = _nullUser, action) => {
       return merge({}, _nullUser, {
         errors
       });
+    case RECEIVE_ALL_TOPICS:
+      let topics = action.topics
+      debugger
+      return merge({}, state, {currentUser: {potentialTopics: topics}})
     default:
       return state;
   }
