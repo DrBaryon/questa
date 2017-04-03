@@ -2,21 +2,21 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 
 class QueryBar extends React.Component {
-   constructor(props){
-     super(props);
-     this.state = {title: "", description: "", showDescription: false,
+  constructor(props){
+    super(props);
+    this.state = {title: "", description: "", showDescription: false,
       expanded: false, displayedQuestions: []};
-     this.askQuestion = this.askQuestion.bind(this);
-     this.filterQuestions = this.filterQuestions.bind(this);
-     this.toggleExpand = this.toggleExpand.bind(this);
-     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
-     this.goHome = this.goHome.bind(this);
-     this.handleLogout = this.handleLogout.bind(this);
-     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
-   }
+    this.askQuestion = this.askQuestion.bind(this);
+    this.filterQuestions = this.filterQuestions.bind(this);
+    this.toggleExpand = this.toggleExpand.bind(this);
+    this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
+    this.goHome = this.goHome.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
+  }
 
-   componentDidMount(){
-     this.setState({
+  componentDidMount(){
+    this.setState({
        expanded: false
     });
   }
