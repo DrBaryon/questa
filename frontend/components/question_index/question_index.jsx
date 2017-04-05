@@ -2,13 +2,13 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 import QuestionIndexItem from './question_index_item';
 import QueryBar from './query_bar';
-import TopicSearchBar from './topic_search_bar'
+import TopicSearchBar from './topic_search_bar';
 
 class QuestionIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {showTopicSearch: false}
-    this.toggleTopicSearch = this.toggleTopicSearch.bind(this)
+    this.state = {showTopicSearch: false};
+    this.toggleTopicSearch = this.toggleTopicSearch.bind(this);
   }
 
   componentDidMount(){
@@ -16,7 +16,7 @@ class QuestionIndex extends React.Component {
   }
 
   toggleTopicSearch(){
-    this.setState({showTopicSearch: !this.state.showTopicSearch})
+    this.setState({showTopicSearch: !this.state.showTopicSearch});
   }
 
   render(){
@@ -38,7 +38,7 @@ class QuestionIndex extends React.Component {
                   {!this.state.showTopicSearch && "Edit"}
                   {this.state.showTopicSearch && "Done"}
                 </a>
-                {this.state.showTopicSearch && <TopicSearchBar currentUser={this.props.currentUser} fetchAllTopics={this.props.fetchAllTopics} />}
+
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
@@ -49,6 +49,8 @@ class QuestionIndex extends React.Component {
                   </li>
                 )}
               </ul>
+              {this.state.showTopicSearch && <TopicSearchBar currentUser={this.props.currentUser}
+                fetchAllTopics={this.props.fetchAllTopics}/>}
             </div>
           </div>
           <div className="main-content">

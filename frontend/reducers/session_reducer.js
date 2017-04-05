@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS }
   from '../actions/session_actions';
 import { RECEIVE_ALL_TOPICS}
-  from '../actions/topic_actions'
+  from '../actions/topic_actions';
 
 import merge from 'lodash/merge';
 
@@ -12,6 +12,7 @@ const _nullUser = Object.freeze({
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
@@ -24,9 +25,10 @@ const SessionReducer = (state = _nullUser, action) => {
         errors
       });
     case RECEIVE_ALL_TOPICS:
-      let topics = action.topics
+      let topics = action.topics;
       debugger
-      return merge({}, state, {currentUser: {potentialTopics: topics}})
+      newState.currentUser.potentialTopics = topics;
+      return newState;
     default:
       return state;
   }
