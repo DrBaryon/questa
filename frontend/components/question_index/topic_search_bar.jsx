@@ -4,7 +4,7 @@ class TopicSearchBar extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {topicName: ""}
+    this.state = {topicName: ""};
     this.filterTopics = this.filterTopics.bind(this);
   }
 
@@ -19,7 +19,6 @@ class TopicSearchBar extends React.Component {
   }
 
   render(){
-    debugger
     return (
       <div className="topic-search-bar">
         <textarea rows="1" onChange={this.update("topicName")} />
@@ -33,8 +32,8 @@ class TopicSearchBar extends React.Component {
         </ul>
       </div>
 
-    )
+    );
   }
 }
 
-export default TopicSearchBar
+export default TopicSearchBar;
