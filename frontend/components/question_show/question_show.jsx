@@ -66,7 +66,7 @@ class QuestionShow extends React.Component {
               <div className="question-tags">
                 {this.props.question.topics &&
                   Object.keys(this.props.question.topics).map((key) =>
-                  <div className = "question-tag">
+                  <div key={key} className = "question-tag">
                     <a href={`/#/topic/${key}`}>{this.props.question.topics[key].name}</a>
                   </div>)
                 }

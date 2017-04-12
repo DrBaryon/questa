@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchQuestion, fetchAllQuestions, createQuestion } from '../../actions/question_actions';
-import { fetchAllTopics } from '../../actions/topic_actions'
+import { fetchAllTopics, addFollow, removeFollow} from '../../actions/topic_actions'
 import {logout} from '../../actions/session_actions';
 import QuestionIndex from './question_index';
 
@@ -16,7 +16,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchTopic: (id) => dispatch(fetchQuestion(id)),
     fetchAllTopics: (searchTerm) => dispatch(fetchAllTopics(searchTerm)),
     createQuestion: (question) => dispatch(createQuestion(question)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    addFollow: (follow) => dispatch(addFollow(follow)),
+    removeFollow: (id) => dispatch(removeFollow(id))
   };
 };
 

@@ -2,7 +2,6 @@
   letter-spacing: 0;
   text-transform: none;
   z-index: 9001;
-  overflow: hidden;
   opacity: 1;
   border-radius: 3px;
   background: #f6f6f6;
@@ -11,10 +10,20 @@
   display: block;
 }
 
-.topic-search-bar textarea {
-  padding: 8px 0px;
-  width: 130px;
-  margin: 2px;
+.topic-search-bar input {
+  width: 106px;
+  float: none;
+  padding: 5px 8px;
+  height: auto;
+  font-size: 13px;
+  font-weight: 400;
+  min-height: 27px;
+  background: #fff;
+  outline: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+  margin: 8px;
 }
 
 .topic-search-bar ul {

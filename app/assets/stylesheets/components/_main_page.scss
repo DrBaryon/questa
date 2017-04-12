@@ -53,7 +53,9 @@
   word-wrap: break-word;
 }
 
+
 .right-sidebar-container {
+  display: none;
   float: right;
   margin-right: 228px;
 }
@@ -164,10 +166,10 @@
 }
 
 .best-answer-content {
-  display: block;
-  height: 73px;
   overflow: hidden;
-  text-overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .best-answer-footer a{
@@ -201,9 +203,7 @@
 }
 
 .right-sidebar-tasklist li {
-  max-width: 88%;
   vertical-align: middle;
-  display: inline-block;
   position: relative;
   bottom: 1px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -213,13 +213,15 @@
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
+}
+
+.topics-list{
 }
 
 .topics-list li{
-  max-width: 88%;
+  display: flex;
+  justify-content: space-between;
   vertical-align: middle;
-  display: inline-block;
-  position: relative;
   bottom: 1px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
@@ -230,6 +232,14 @@
   padding-top: 8px;
 }
 
-.topics-list li:hover{
-  color: #2b6dad;
+.topics-list a {
+  max-width: 88%;
+  word-wrap: break-word;
+}
+
+.topics-list li > .unfollow-button{
+  margin-left: 10px;
+  width: 5px;
+  height: 5px;
+  cursor: pointer;
 }
