@@ -114,13 +114,15 @@ class QueryBar extends React.Component {
     }
     return (
        <form className = "query-bar" onSubmit={this.askQuestion}>
-         <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
-         <div className="ask-bar" onClick={this.toggleExpand}>
-          <textarea rows="1" />
-           <input type="submit" value = "Ask Question"/>
-         </div>
-         <div className="nav-bar">
-          <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
+        <div className = "query-bar-contents">
+          <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
+          <div className="ask-bar" onClick={this.toggleExpand}>
+            <textarea rows="1" />
+            <input type="submit" value = "Ask Question"/>
+          </div>
+          <div className="nav-bar">
+            <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
+          </div>
         </div>
       </form>
     );

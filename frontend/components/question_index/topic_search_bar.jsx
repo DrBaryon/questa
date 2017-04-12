@@ -6,6 +6,7 @@ class TopicSearchBar extends React.Component {
     super(props);
     this.state = {topicName: ""};
     this.filterTopics = this.filterTopics.bind(this);
+    this.followTopic = this.followTopic.bind(this);
   }
 
   update(field) {
@@ -14,19 +15,31 @@ class TopicSearchBar extends React.Component {
    };
   }
 
+  followTopic(topic) {
+    return e => {
+      this.props.addFollow({topic_id: topic.id});
+    }
+  }
+
+
+
   filterTopics(){
     this.props.fetchAllTopics(this.state.topicName);
+    // let currentTopics = this.props.currentUser.topics.map(topic => topic.name);
+    // this.props.currentUser.potentialTopics = topics.filter(
+    //   topic => !currentTopics.includes(topic.name)
+    // );
   }
 
   render(){
     return (
       <div className="topic-search-bar">
-        <textarea rows="1" onChange={this.update("topicName")} />
+        <input type="text" onInput={this.update("topicName")} />
         <ul className="search-results">
           {this.props.currentUser.potentialTopics &&
             this.props.currentUser.potentialTopics.map((topic) =>
-            <li key={topic.id}>
-              <a href={"/#/" + topic.id}>{topic.name}</a>
+            <li key={topic.id} onClick={this.followTopic(topic)}>
+              {topic.name}
             </li>
           )}
         </ul>

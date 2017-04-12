@@ -12,3 +12,18 @@ export const fetchAllTopics = (searchTerm) => {
     data: {searchTerm: searchTerm}
   });
 };
+
+export const addFollow = (follow) => {
+  return $.ajax({
+    type: 'POST',
+    url: `/api/follows`,
+    data: {follow}
+  });
+};
+
+export const removeFollow = (id) => {
+  return $.ajax({
+    type: 'DELETE',
+    url: `/api/follows/${id}`
+  });
+};

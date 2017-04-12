@@ -9,6 +9,7 @@ class QuestionIndex extends React.Component {
     super(props);
     this.state = {showTopicSearch: false};
     this.toggleTopicSearch = this.toggleTopicSearch.bind(this);
+    this.unfollowTopic = this.unfollowTopic.bind(this);
   }
 
   componentDidMount(){
@@ -17,6 +18,12 @@ class QuestionIndex extends React.Component {
 
   toggleTopicSearch(){
     this.setState({showTopicSearch: !this.state.showTopicSearch});
+  }
+
+  unfollowTopic(topic) {
+    return e => {
+      this.props.removeFollow(topic.id);
+    }
   }
 
   render(){
@@ -42,15 +49,19 @@ class QuestionIndex extends React.Component {
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
-                {this.props.currentUser &&
-                  this.props.currentUser.topics.map((topic) =>
-                  <li>
-                    <Link to={`/topic/${topic.id}`}>{topic.name}</Link>
+                {this.props.currentUser.topics &&
+                  Object.keys(this.props.currentUser.topics).map(key =>
+                  <li key={key}>
+                    <Link to={`/topic/${key}`}>{this.props.currentUser.topics[key].name}</Link>
+                    {this.state.showTopicSearch &&
+                      <div className="unfollow-button" onClick={this.unfollowTopic(this.props.currentUser.topics[key])}>X</div>
+                    }
                   </li>
                 )}
               </ul>
               {this.state.showTopicSearch && <TopicSearchBar currentUser={this.props.currentUser}
-                fetchAllTopics={this.props.fetchAllTopics}/>}
+                fetchAllTopics={this.props.fetchAllTopics}
+                addFollow={this.props.addFollow}/>}
             </div>
           </div>
           <div className="main-content">
