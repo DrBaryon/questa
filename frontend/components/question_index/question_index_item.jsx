@@ -48,6 +48,4 @@ class QuestionIndexItem extends React.Component {
   }
 }
 
-
-
 export default withRouter(QuestionIndexItem);

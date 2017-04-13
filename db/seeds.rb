@@ -23,6 +23,7 @@ user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", f
 topic1 = Topic.create(name: "Animal Attacks")
 topic2 = Topic.create(name: "Best of the Quest(a)")
 
+
 follow1 = Follow.create(user: user5, topic: topic1)
 follow2 = Follow.create(user: user5, topic: topic2)
 

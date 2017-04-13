@@ -1,7 +1,8 @@
-import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS, RECEIVE }
-  from '../actions/session_actions';
+
 import { RECEIVE_ALL_TOPICS, RECEIVE_FOLLOWED_TOPIC, REMOVE_FOLLOWED_TOPIC }
   from '../actions/topic_actions';
+import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS }
+  from '../actions/session_actions';
 
 import merge from 'lodash/merge';
 

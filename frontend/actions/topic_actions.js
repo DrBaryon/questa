@@ -25,6 +25,7 @@ export const removeFollow = (id) => dispatch => (
     .then(removedFollow => dispatch(removeFollowedTopic(removedFollow)))
 );
 
+
 export const receiveTopic = topic => {
   return ({
     type: RECEIVE_TOPIC,
