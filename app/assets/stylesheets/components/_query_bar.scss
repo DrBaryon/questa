@@ -191,7 +191,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-width: 1200px;
+  min-width: 400px;
   display: flex;
   justify-content: center;
   height: 50px;
@@ -201,8 +201,17 @@
   background-color: white;
 }
 
+.query-bar-contents {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 400px;
+  width: 100%;
+  max-width: 1000px;
+
+}
+
 .query-bar-logo {
-  right: -38px;
   font-size: 23px;
   color: red;
   font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
@@ -298,9 +307,11 @@
 
 .nav-bar {
   display: flex;
-  width: 413px;
+  flex-flow: row-reverse;
+  width: 100%;
+  min-width: 100px;
   height: 50px;
-  margin-left: 8px;
+  margin-left: 100px;
 }
 
 .nav-bar button{
@@ -308,10 +319,10 @@
   font-weight: 500;
   color: #999;
   line-height: 50px;
-  padding-left: 36px;
   height: 50px;
   border: 0;
   background-color: white;
+  cursor: pointer;
 }
 
 .nav-bar button:hover {

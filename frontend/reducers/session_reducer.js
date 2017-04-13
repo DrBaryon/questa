@@ -1,3 +1,6 @@
+
+import { RECEIVE_ALL_TOPICS, RECEIVE_FOLLOWED_TOPIC, REMOVE_FOLLOWED_TOPIC }
+  from '../actions/topic_actions';
 import { RECEIVE_CURRENT_USER, LOGOUT, RECEIVE_ERRORS }
   from '../actions/session_actions';
 
@@ -10,6 +13,7 @@ const _nullUser = Object.freeze({
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
@@ -21,6 +25,19 @@ const SessionReducer = (state = _nullUser, action) => {
       return merge({}, _nullUser, {
         errors
       });
+    case RECEIVE_ALL_TOPICS:
+      let topics = action.topics;
+      newState.currentUser.potentialTopics = topics;
+      return newState;
+    case RECEIVE_FOLLOWED_TOPIC:
+      debugger
+      let topic = action.follow.topic;
+      newState.currentUser.topics[topic.id] = topic;
+      return newState;
+    case REMOVE_FOLLOWED_TOPIC:
+      let deletedTopic = action.follow.topic
+      delete newState.currentUser.topics[deletedTopic.id];
+      return newState;
     default:
       return state;
   }

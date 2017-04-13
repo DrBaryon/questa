@@ -1,11 +1,22 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router';
 
 class QuestionIndexItem extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.goToQuestion = this.goToQuestion.bind(this);
+  }
+
+  goToQuestion(e){
+    e.preventDefault();
+    this.props.router.push(`/${this.props.question.id}`);
+  }
 
   render(){
     let question = this.props.question;
     return(
-      <li className="question">
+      <li className="question" onClick={this.goToQuestion}>
         <div className="question-topic">
           {question.bestTopic &&
             <a href={`/#/topic/${question.bestTopic.id}`}>{question.bestTopic.name}</a>}
@@ -37,6 +48,4 @@ class QuestionIndexItem extends React.Component {
   }
 }
 
-
-
-export default QuestionIndexItem;
+export default withRouter(QuestionIndexItem);

@@ -2,21 +2,21 @@ import React from 'react';
 import {Link, withRouter} from 'react-router';
 
 class QueryBar extends React.Component {
-   constructor(props){
-     super(props);
-     this.state = {title: "", description: "", showDescription: false,
+  constructor(props){
+    super(props);
+    this.state = {title: "", description: "", showDescription: false,
       expanded: false, displayedQuestions: []};
-     this.askQuestion = this.askQuestion.bind(this);
-     this.filterQuestions = this.filterQuestions.bind(this);
-     this.toggleExpand = this.toggleExpand.bind(this);
-     this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
-     this.goHome = this.goHome.bind(this);
-     this.handleLogout = this.handleLogout.bind(this);
-     this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
-   }
+    this.askQuestion = this.askQuestion.bind(this);
+    this.filterQuestions = this.filterQuestions.bind(this);
+    this.toggleExpand = this.toggleExpand.bind(this);
+    this.toggleDescriptionField = this.toggleDescriptionField.bind(this);
+    this.goHome = this.goHome.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
+  }
 
-   componentDidMount(){
-     this.setState({
+  componentDidMount(){
+    this.setState({
        expanded: false
     });
   }
@@ -114,13 +114,15 @@ class QueryBar extends React.Component {
     }
     return (
        <form className = "query-bar" onSubmit={this.askQuestion}>
-         <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
-         <div className="ask-bar" onClick={this.toggleExpand}>
-          <textarea rows="1" />
-           <input type="submit" value = "Ask Question"/>
-         </div>
-         <div className="nav-bar">
-          <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
+        <div className = "query-bar-contents">
+          <div className="query-bar-logo" onClick={this.goHome}>Questa</div>
+          <div className="ask-bar" onClick={this.toggleExpand}>
+            <textarea rows="1" />
+            <input type="submit" value = "Ask Question"/>
+          </div>
+          <div className="nav-bar">
+            <button className="logout-button" type="button" onClick={this.handleLogout} >Logout</button>
+          </div>
         </div>
       </form>
     );

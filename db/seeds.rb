@@ -23,12 +23,13 @@ user5 = User.create(email: "charles.s.bergman@gmail.com", password: "testing", f
 topic1 = Topic.create(name: "Animal Attacks")
 topic2 = Topic.create(name: "Best of the Quest(a)")
 
-follow1 = Follow.create(user: user1, topic: topic1)
-follow2 = Follow.create(user: user1, topic: topic2)
+
+follow1 = Follow.create(user: user5, topic: topic1)
+follow2 = Follow.create(user: user5, topic: topic2)
 
 question1 = Question.create(title: "You and a super intelligent snail both get 1 million dollars,
   and you both become immortal, however you die if the snail touches you.
-  It always knows where you are and slowly crawls toward you. WHat's your plan?",
+  It always knows where you are and slowly crawls toward you. What's your plan?",
   description: "", author_id: user1.id)
 answer1 = Answer.create(question_id: question1.id, author_id: user2.id, content: "Ok, let's do this.
   First things first - That million dollars is practically worthless compared to immortality. Every dime of that cash can and should be spent ensuring that the snail never, ever reaches me.
