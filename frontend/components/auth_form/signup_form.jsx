@@ -75,7 +75,8 @@ class SignupForm extends React.Component{
           </li>
           <li>
             <label>Password
-              <input onChange={this.update("password")}
+              <input type="password"
+                onChange={this.update("password")}
                 value={this.state.password}/>
             </label>
           </li>
