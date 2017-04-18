@@ -49,7 +49,7 @@ class QuestionIndex extends React.Component {
               </div>
               <ul className="topics-list">
                 <li>Top Stories</li>
-                {this.props.currentUser.topics &&
+                {this.props.currentUser &&
                   Object.keys(this.props.currentUser.topics).map(key =>
                   <li key={key}>
                     <Link to={`/topic/${key}`}>{this.props.currentUser.topics[key].name}</Link>
