@@ -1,5 +1,7 @@
 # Questa
 
+![home]
+
 ## Summary
 
 Questa is Q&A web application inspired by popular Q&A forum Quora and built using Ruby on Rails and React.js/flux architecture. Questa allows users to: 
@@ -56,5 +58,5 @@ rendered on the left sidebar as links to their topic pages. This favorites list 
 the topic list by topic name or deleting topics from the list. Edits show up immediately on the frontend through updates to 
 the store, while posting to the backend for sake of permanence. 
 
-
+[home]: ./app/assets/images/homepage.PNG
 
