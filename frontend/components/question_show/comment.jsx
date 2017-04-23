@@ -7,7 +7,6 @@ class Comment extends React.Component {
     super(props);
     this.state = { showComments: false, showCommentForm: false };
     this.toggleCommentForm = this.toggleCommentForm.bind(this);
-    // this.toggleComments = this.toggleComments.bind(this);
   }
 
   toggleCommentForm(){
