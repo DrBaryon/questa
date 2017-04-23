@@ -16,12 +16,6 @@ class Comment extends React.Component {
     });
   }
 
-  // toggleComments(){
-  //   this.setState({
-  //     showComments: !this.state.showComments
-  //   });
-  // }
-
   render(){
     if (!this.props.comment){
       return (<h2>Loading</h2>);
