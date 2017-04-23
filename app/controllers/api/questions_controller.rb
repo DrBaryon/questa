@@ -1,7 +1,5 @@
 class Api::QuestionsController < ApplicationController
 
-  # after_initialize :ensure_own_question, only: [:delete, :update]
-
   def index
     @questions = Question.all
   end
