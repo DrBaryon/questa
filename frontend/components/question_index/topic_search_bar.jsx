@@ -25,10 +25,6 @@ class TopicSearchBar extends React.Component {
 
   filterTopics(){
     this.props.fetchAllTopics(this.state.topicName);
-    // let currentTopics = this.props.currentUser.topics.map(topic => topic.name);
-    // this.props.currentUser.potentialTopics = topics.filter(
-    //   topic => !currentTopics.includes(topic.name)
-    // );
   }
 
   render(){
