@@ -1,6 +1,6 @@
 # Questa
 
-[Live Link](www.questa.pro)
+[Live Link](http://www.questa.pro)
 
 ![home]
 
