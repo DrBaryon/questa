@@ -22,13 +22,13 @@ Questa is a Q&A web application inspired by popular Q&A forum Quora and built us
 
 ## Structure
 
-#### Frontend
+#### Backend
 
 The app was built using Ruby on Rails on the backend with a postgreSQL database. The app makes use of RESTful routes and
 requests to the database are handled using AJAX queries. The responses are rendered as JSON objects using JBuilder to specify
 the precise structure of the output.
 
-#### Backend
+#### Frontend
 
 The front end is built completely in React.js and uses React's Flux architecture. Modals use conditional rendering of React
 components rather than manipulation of CSS display properties. This approach reduces queries to the database to their absolute
